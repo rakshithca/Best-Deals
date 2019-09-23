@@ -1,0 +1,130 @@
+<!-- the left navigation bar content-->
+
+<div id="sidebar" style="margin-top: 55px;">
+	<ul>
+		<h2 onclick="showIT('TVs')">TVs</h2>
+		<li id="TVs" class="ullistli"> 
+			<ul>
+				<li id="first"><a href="TVList?maker=lg">LG</a></li>
+				<li><a href="TVList?maker=sony">Sony</a></li>
+				<li><a href="TVList?maker=samsung">samsung</a></li>
+			</ul>
+		</li>
+		
+		
+		
+		<h2 onclick="showIT('SoundSystems')">SoundSystems</h2>
+		<li id="SoundSystems" class="ullistli">
+			<ul>
+				<li id="first"><a href="SoundSystemsList?maker=Bose">Bose</a></li>
+				<li><a href="SoundSystemsList?maker=Marshall">Marshall</a></li>
+				<li><a href="SoundSystemsList?maker=Yamaha">Yamaha</a></li>
+			</ul>
+		</li>
+		
+		
+		
+		
+
+		<h2 onclick="showIT('Phones')">Phones</h2>
+		<li id="Phones" class="ullistli">
+			<ul>
+				<li id="first"><a href="PhoneList?maker=apple">Apple</a></li>
+				<li><a href="PhoneList?maker=lg">LG</a></li>
+				<li><a href="PhoneList?maker=samsung">samsung</a></li>
+			</ul>
+		</li>
+
+
+
+	
+		<h2 onclick="showIT('Laptops')">Laptops</h2>
+		<li  id="Laptops" class="ullistli">
+			<ul>
+				<li id="first"><a href="LaptopList?maker=apple">Apple</a></li>
+				<li><a href="LaptopList?maker=lg">LG</a></li>
+				<li><a href="LaptopList?maker=samsung">samsung</a></li>
+			</ul>
+		</li>
+
+
+		
+		<h2 onclick="showIT('VoiceAssistants')">Voice Assistants</h2>
+		<li id="VoiceAssistants" class="ullistli">
+			<ul> 
+				<li id="first"><a href="VoiceAssistantsList?maker=Google">Google Assistants</a></li>
+				<li><a href="VoiceAssistantsList?maker=Samsung">Samsung Assistants</a></li>
+				<li><a href="VoiceAssistantsList?maker=Microsoft">Microsoft</a></li>
+			</ul>
+		</li>
+
+
+		<h2 onclick="showIT('FitnessWatches')">Fitness Watches</h2>
+		<li id="FitnessWatches" class="ullistli">
+			<ul>
+				<li id="first"><a href="FitnessWatchesList?maker=Fitbit">FitBit</a></li>
+				<li><a href="FitnessWatchesList?maker=Apple">Apple</a></li>
+				<li><a href="FitnessWatchesList?maker=Garmin">Garmin</a></li>
+			</ul>
+		</li>
+
+
+		<h2 onclick="showIT('SmartWatches')">Smart Watches</h2>
+		<li  id="SmartWatches" class="ullistli">
+			<ul>			
+				<li id="first"><a href="SmartWatchesList?maker=Fossil">Fossil</a></li>
+				<li><a href="SmartWatchesList?maker=Fitbit">Fitbit Smart</a></li>
+				<li><a href="SmartWatchesList?maker=Apple">Apple Smart</a></li>
+			</ul>
+		</li>
+
+		<h2 onclick="showIT('HeadPhones')">Head Phones</h2>
+		<li class="ullistli" id="HeadPhones">
+			<ul>
+				<li id="first"><a href="HeadphoneList?maker=Beats">Beats</a></li>
+				<li><a href="HeadphoneList?maker=Sennheiser">Sennheiser</a></li>
+				<li><a href="HeadphoneList?maker=Mpow">Mpow</a></li>
+			</ul>
+		</li>
+	
+
+		<h2 onclick="showIT('WirelessPlans')">Wireless Plans</h2>
+		<li id="WirelessPlans"  class="ullistli">
+			<ul>
+				<li id="first"><a href="WirelessplansList?maker=Basic">Basic Plan</a></li>
+				<li><a href="WirelessplansList?maker=Premium">Premium Plan</a></li>
+				<li><a href="WirelessplansList?maker=Ultimate">Ultimate Plan</a></li>
+			</ul>
+		</li>
+
+			<h2 onclick="showIT('Accessories')">Accessories</h2>
+			<li class="ullistli" id="Accessories">
+				<ul>
+				<li id="first"><a href="AccessoryList?maker=lg&TV=Oled45">LG Accessories</a></li>
+				<li><a href="AccessoryList?maker=sony&TV=PS4">Sony Accessories</a></li>
+				<li><a href="AccessoryList?maker=samsung&TV=Q755">samsung Accessories</a></li>
+			</ul>
+		</li>
+		
+	</li>			
+	</ul>
+</div>
+
+<script>
+		[].forEach.call(document.querySelectorAll('.ullistli'), function (el) {
+		  el.style.visibility = 'hidden';
+		  el.style.height=0;
+		});
+		function showIT(id){
+			[].forEach.call(document.querySelectorAll('#'+id), function (el) {
+				if(el.style.visibility == 'hidden'){
+					el.style.visibility = 'visible';
+					el.style.height="100%";
+				} else {
+					el.style.visibility = 'hidden';
+					el.style.height=0;
+				}
+		//   el.style.visibility = 'visible';
+		});
+		}
+</script>

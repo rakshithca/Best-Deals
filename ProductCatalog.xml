@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ProductCatalog>
+
+<TVCatalog>
+    <TV id="Oled45">
+        <name>Oled45</name>
+        <price>399.99</price>
+        <image>xbox1.jpg</image>
+        <manufacturer>LG</manufacturer>
+        <condition>New</condition>
+        <discount>10.0</discount>
+        <accessories>
+            <accessory>xboxone_wc</accessory>
+            <accessory>xboxone_sh</accessory>
+			<accessory>xboxone_kg</accessory>
+            <accessory>xboxone_vb</accessory>
+			<accessory>xboxone_rs</accessory>
+            <accessory>xboxone_mp</accessory>
+			<accessory>xboxone_mc</accessory>
+			
+			
+        </accessories>
+    </TV>
+    <TV id="HD55">
+        <name>HD</name>
+        <price>399.99</price>
+        <image>xbox360.jpg</image>
+        <manufacturer>LG</manufacturer>
+        <condition>New</condition>
+        <discount>10.0</discount>
+        <accessories>
+            <accessory>xbox360_wc</accessory>
+            <accessory>xbox360_sh</accessory>
+			<accessory>xbox360_vb</accessory>
+			<accessory>xbox360_rs</accessory>
+			<accessory>xbox360_mp</accessory>
+			<accessory>xbox360_kg</accessory>
+        </accessories>
+    </TV>
+
+    <TV id="Bravia">
+        <name>Bravia</name>
+        <price>549.99</price>
+        <image>PS4-TV-bundle.jpg</image>
+        <manufacturer>Sony</manufacturer>
+        <condition>New</condition>
+        <discount>10.0</discount>
+        <accessories>
+            <accessory>ps4_wc</accessory>
+			
+        </accessories>
+    </TV>
+    <TV id="XBR">
+        <name>XBR</name>
+        <price>999.99</price>
+        <image>ps3.jpg</image>
+        <manufacturer>Sony</manufacturer>
+        <condition>New</condition>
+        <discount>10.0</discount>
+        <accessories>
+            <accessory>ps3_wc</accessory>
+			
+        </accessories>
+    </TV>
+    <TV id="Q755">
+        <name>Q7 55</name>
+        <price>949.99</price>
+        <image>Wii-TV.png</image>
+        <manufacturer>samsung</manufacturer>
+        <condition>New</condition>
+        <discount>10.0</discount>
+        <accessories>
+            <accessory>samsung_wc</accessory>
+            <accessory>samsung_sh</accessory>
+        </accessories>
+    </TV>
+</TVCatalog>
+<!--***************************************************************************************-->
+<PhoneCatalog>
+    <phone id="ipad">
+        <name>Apple IPhone 11 Pro</name>
+        <price>189.99</price>
+        <image>apple1.jpg</image>
+        <manufacturer>Apple</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+    </phone>
+    <phone id="ipad3">
+        <name>Apple IPhone 10</name>
+        <price>189.99</price>
+        <image>apple2.jpg</image>
+        <manufacturer>Apple</manufacturer>
+        <condition>Used</condition>
+        <discount>20.0</discount>
+    </phone>
+    <phone id="Surface">
+        <name>V10</name>
+        <price>299.99</price>
+        <image>m1.jpg</image>
+        <manufacturer>LG</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+    </phone>
+    <phone id="Surface4">
+        <name>G5</name>
+        <price>299.99</price>
+        <image>m2.jpg</image>
+        <manufacturer>LG</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+    </phone>
+    <phone id="Samsung2">
+        <name>Galaxy S10</name>
+        <price>150.99</price>
+        <image>s1.jpg</image>
+        <manufacturer>Samsung</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+    </phone>
+
+</PhoneCatalog>
+<!-- **************************************************************************************** -->
+<SoundSystemsCatalog>
+<soundsystem id="g1">
+        <name>Companion</name>
+        <price>50.99</price>
+        <image>ea_fifa.jpg</image>
+        <manufacturer>Bose</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+</soundsystem>
+<soundsystem id="g2">
+        <name>Revolve</name>
+        <price>50.99</price>
+        <image>ea_nfs.jpg</image>
+        <manufacturer>Bose</manufacturer>
+        <condition>Refurbished</condition>
+        <discount>15.0</discount>
+</soundsystem>
+<soundsystem id="g3">
+        <name>StockWell</name>
+        <price>50.99</price>
+        <image>activision_cod.jpg</image>
+        <manufacturer>Marshall</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+</soundsystem>
+<soundsystem id="g5">
+        <name>Stanmore</name>
+        <price>50.99</price>
+        <image>ea_nfs2.jpg</image>
+        <manufacturer>Marshall</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+</soundsystem>
+<soundsystem id="g4">
+        <name>DXR10</name>
+        <price>50.99</price>
+        <image>tti_evolve.jpg</image>
+        <manufacturer>Yamaha</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+</soundsystem>
+</SoundSystemsCatalog>
+<!--********************************************************************************************-->
+<LaptopCatalog>
+    <laptop id="ipad">
+        <name>Apple MacBook Pro</name>
+        <price>189.99</price>
+        <image>apple1.jpg</image>
+        <manufacturer>Apple</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+    </laptop>
+    <laptop id="ipad3">
+        <name>Apple MacBook Air</name>
+        <price>189.99</price>
+        <image>apple2.jpg</image>
+        <manufacturer>Apple</manufacturer>
+        <condition>Used</condition>
+        <discount>20.0</discount>
+    </laptop>
+    <laptop id="Surface">
+        <name>Gram Thin</name>
+        <price>299.99</price>
+        <image>m1.jpg</image>
+        <manufacturer>LG</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+    </laptop>
+    <laptop id="Surface4">
+        <name>Gram Pro</name>
+        <price>299.99</price>
+        <image>m2.jpg</image>
+        <manufacturer>LG</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+    </laptop>
+    <laptop id="Samsung2">
+        <name>NoteBook Pro</name>
+        <price>150.99</price>
+        <image>s1.jpg</image>
+        <manufacturer>Samsung</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+    </laptop>
+
+</LaptopCatalog>
+<!--***********************************************************************************************-->
+<VoiceAssistantCatalog>
+<voiceassistant id="g1">
+        <name>Home</name>
+        <price>50.99</price>
+        <image>ea_fifa.jpg</image>
+        <manufacturer>Google</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+</voiceassistant>
+<voiceassistant id="g2">
+        <name>Mini</name>
+        <price>50.99</price>
+        <image>ea_nfs.jpg</image>
+        <manufacturer>Google</manufacturer>
+        <condition>Refurbished</condition>
+        <discount>15.0</discount>
+</voiceassistant>
+<voiceassistant id="g3">
+        <name>Alexa</name>
+        <price>50.99</price>
+        <image>activision_cod.jpg</image>
+        <manufacturer>Samsung</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+</voiceassistant>
+<voiceassistant id="g5">
+        <name>Bigsby</name>
+        <price>50.99</price>
+        <image>activision_prot.jpg</image>
+        <manufacturer>Samsung</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+</voiceassistant>
+<voiceassistant id="g4">
+        <name>Cortana</name>
+        <price>50.99</price>
+        <image>tti_evolve.jpg</image>
+        <manufacturer>Microsoft</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+</voiceassistant>
+</VoiceAssistantCatalog>
+<!--******************************************************************************************************-->
+<FitnessWatchCatalog>
+<fitnesswatch id="g1">
+        <name>Ace 2</name>
+        <price>50.99</price>
+        <image>ea_fifa.jpg</image>
+        <manufacturer>Fitbit</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+</fitnesswatch>
+<fitnesswatch id="g2">
+        <name>Charge 3</name>
+        <price>50.99</price>
+        <image>ea_nfs.jpg</image>
+        <manufacturer>Fitbit</manufacturer>
+        <condition>Refurbished</condition>
+        <discount>15.0</discount>
+</fitnesswatch>
+<fitnesswatch id="g3">
+        <name>Apple Watch 3 LTE</name>
+        <price>50.99</price>
+        <image>activision_cod.jpg</image>
+        <manufacturer>Apple</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+</fitnesswatch>
+<fitnesswatch id="g5">
+        <name>Apple Watch 3</name>
+        <price>50.99</price>
+        <image>tti_gta.jpg</image>
+        <manufacturer>Apple</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+</fitnesswatch>
+<fitnesswatch id="g4">
+        <name>Forerunner</name>
+        <price>50.99</price>
+        <image>tti_evolve.jpg</image>
+        <manufacturer>Garmin</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+</fitnesswatch>
+</FitnessWatchCatalog>
+
+<!--*********************************************************************************************************-->
+
+<SmartWatchCatalog>
+<smartwatch id="g1">
+        <name>Carlyle</name>
+        <price>50.99</price>
+        <image>ea_fifa.jpg</image>
+        <manufacturer>Fossil</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+</smartwatch>
+<smartwatch id="g2">
+        <name>Gen 3</name>
+        <price>50.99</price>
+        <image>ea_nfs.jpg</image>
+        <manufacturer>Fossil</manufacturer>
+        <condition>Refurbished</condition>
+        <discount>15.0</discount>
+</smartwatch>
+<smartwatch id="g5">
+        <name>Versa 2</name>
+        <price>50.99</price>
+        <image>activision_cod.jpg</image>
+        <manufacturer>Fitbit</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+</smartwatch>
+<smartwatch id="g3">
+        <name>Smart Ionic</name>
+        <price>50.99</price>
+        <image>activision_cod.jpg</image>
+        <manufacturer>Fitbit</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+</smartwatch>
+<smartwatch id="g4">
+        <name>Apple Watch 3 WiFi</name>
+        <price>50.99</price>
+        <image>tti_evolve.jpg</image>
+        <manufacturer>Apple</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+</smartwatch>
+</SmartWatchCatalog>
+<!--****************************************************************************************-->
+<HeadphoneCatalog>
+    <headphone id="ipad">
+        <name>Studio 3</name>
+        <price>189.99</price>
+        <image>apple1.jpg</image>
+        <manufacturer>Beats</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+    </headphone>
+    <headphone id="ipad3">
+        <name>Solo 2</name>
+        <price>189.99</price>
+        <image>apple2.jpg</image>
+        <manufacturer>Beats</manufacturer>
+        <condition>Used</condition>
+        <discount>20.0</discount>
+    </headphone>
+    <headphone id="Surface">
+        <name>HD450</name>
+        <price>299.99</price>
+        <image>m1.jpg</image>
+        <manufacturer>Sennheiser</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+    </headphone>
+    <headphone id="Surface4">
+        <name>Pro280</name>
+        <price>299.99</price>
+        <image>m2.jpg</image>
+        <manufacturer>Sennheiser</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+    </headphone>
+    <headphone id="Samsung2">
+        <name>ANC1000</name>
+        <price>150.99</price>
+        <image>s1.jpg</image>
+        <manufacturer>Mpow</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+    </headphone>
+
+</HeadphoneCatalog>
+
+<!--**********************************************************************************-->
+<WirelessplansCatalog>
+<wirelessplan id="g1">
+        <name>Basic:unlimited Walk+Text+Talk</name>
+        <price>50.99</price>
+        <image>ea_fifa.jpg</image>
+        <manufacturer>Basic</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+</wirelessplan>
+<wirelessplan id="g3">
+        <name>Premium:Added Music and Video</name>
+        <price>50.99</price>
+        <image>activision_cod.jpg</image>
+        <manufacturer>Premium</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+</wirelessplan>
+<wirelessplan id="g4">
+        <name>Ultimate: Speed in Peak Hours</name>
+        <price>50.99</price>
+        <image>tti_evolve.jpg</image>
+        <manufacturer>Ultimate</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+</wirelessplan>
+</WirelessplansCatalog>
+
+<!--****************************************************************************************-->
+
+<AccessoryCatalog>
+
+    <accessory id="xboxone_wc">
+        <name>Controller</name>
+        <price>89.99</price>
+        <image>XBOX controller.jpg</image>
+        <manufacturer>LG</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+     </accessory>
+
+    <accessory id="xboxone_sh">
+        <name>Turtle Beach Headset</name>
+        <price>89.99</price>
+        <image>Turtle Beach Headset.jpg</image>
+        <manufacturer>LG</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+     </accessory>
+	 
+	 <accessory id="xboxone_vb">
+        <name>joystick</name>
+        <price>89.99</price>
+        <image>joystick.jpg</image>
+        <manufacturer>LG</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+     </accessory>
+
+    <accessory id="xboxone_kg">
+        <name>Keypad</name>
+        <price>89.99</price>
+        <image>keypad.jpg</image>
+        <manufacturer>LG</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+     </accessory>
+	 
+	 <accessory id="xboxone_rs">
+        <name>Starterkit</name>
+        <price>89.99</price>
+        <image>starterkit.jpeg</image>
+        <manufacturer>LG</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+     </accessory>
+
+    <accessory id="xboxone_mp">
+        <name>Wireless adpter</name>
+        <price>89.99</price>
+        <image>wirelessadapter.jpg</image>
+        <manufacturer>LG</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+     </accessory>
+	 
+	 <accessory id="xboxone_mc">
+        <name>Wireless </name>
+        <price>89.99</price>
+        <image>wirelessadapter.jpg</image>
+        <manufacturer>LG</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+     </accessory>
+	 
+
+    <accessory id="xbox360_wc">
+        <name>XBOX Speeding Wheel</name>
+        <price>89.99</price>
+        <image>XBOX360-SpeedWheel.jpg</image>
+        <manufacturer>LG</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+     </accessory>
+
+    <accessory id="xbox360_sh">
+        <name>XBOX Wireless Adapter</name>
+        <price>89.99</price>
+        <image>xbox360_wa.png</image>
+        <manufacturer>LG</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+     </accessory>
+	 
+	 <accessory id="xbox360_vb">
+        <name>Remote</name>
+        <price>89.99</price>
+        <image>remote.jpg</image>
+        <manufacturer>LG</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+     </accessory>
+	 	 <accessory id="xbox360_rs">
+        <name>messengerkit</name>
+        <price>89.99</price>
+        <image>messengerkit.jpg</image>
+        <manufacturer>LG</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+     </accessory>
+	 
+	 	 <accessory id="xbox360_mp">
+        <name>Steering</name>
+        <price>89.99</price>
+        <image>steering.jpg</image>
+        <manufacturer>LG</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+     </accessory>
+	 
+	 	 <accessory id="xbox360_kg">
+        <name>Charger</name>
+        <price>89.99</price>
+        <image>charger.jpg</image>
+        <manufacturer>LG</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+     </accessory>
+
+    <accessory id="ps4_wc">
+        <name>PS Controller</name>
+        <price>89.99</price>
+        <image>XBOX controller.jpg</image>
+        <manufacturer>Sony</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+     </accessory>
+
+    <accessory id="ps3_wc">
+        <name>PS Gaming HeadPhones</name>
+        <price>89.99</price>
+        <image>Turtle Beach Headset.jpg</image>
+        <manufacturer>Sony</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+     </accessory>
+
+    <accessory id="samsung_wc">
+        <name>Samsung Controller</name>
+        <price>89.99</price>
+        <image>Wii1.jpg</image>
+        <manufacturer>Samsung</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+     </accessory>
+
+    <accessory id="samsung_sh">
+        <name>Samsung Racing Controller</name>
+        <price>89.99</price>
+        <image>Wii2.jpg</image>
+        <manufacturer>Samsung</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+     </accessory>
+	 
+  
+
+</AccessoryCatalog>
+
+
+
+
+
+</ProductCatalog>
