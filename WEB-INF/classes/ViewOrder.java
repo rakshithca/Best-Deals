@@ -53,9 +53,11 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 
 		try
 		{
-			FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\BestDeals\\PaymentDetails.txt"));
-			ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);	      
-			orderPayments = (HashMap)objectInputStream.readObject();
+
+			orderPayments=MySqlDataStoreUtilities.selectOrder();
+			// FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\BestDeals\\PaymentDetails.txt"));
+			// ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);	      
+			// orderPayments = (HashMap)objectInputStream.readObject();
 		}
 		catch(Exception e)
 		{
@@ -75,9 +77,10 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 				//get the order details from file
 				try
 				{
-					FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\BestDeals\\PaymentDetails.txt"));
-					ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);	      
-					orderPayments = (HashMap)objectInputStream.readObject();
+					orderPayments=MySqlDataStoreUtilities.selectOrder();
+					// FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\BestDeals\\PaymentDetails.txt"));
+					// ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);	      
+					// orderPayments = (HashMap)objectInputStream.readObject();
 				}
 				catch(Exception e)
 				{
@@ -138,9 +141,10 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 				try
 				{
 		
-					FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\BestDeals\\PaymentDetails.txt"));
-					ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);	      
-					orderPayments = (HashMap)objectInputStream.readObject();
+					orderPayments=MySqlDataStoreUtilities.selectOrder();
+					// FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\BestDeals\\PaymentDetails.txt"));
+					// ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);	      
+					// orderPayments = (HashMap)objectInputStream.readObject();
 				}
 				catch(Exception e)
 				{
@@ -151,6 +155,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 					{
 							if(oi.getOrderName().equals(orderName) && (oi.getUserName().equals(username) || request.getParameter("cust_order").equals("cust")))
 							{
+								MySqlDataStoreUtilities.deleteOrder(orderId,orderName);
 								ListOrderPayment.add(oi);
 								pw.print("<h4 style='color:red'>Your Order is Cancelled</h4>");	
 								break;							
@@ -163,19 +168,19 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 							orderPayments.remove(orderId);
 					}
 				//save the updated hashmap with removed order to the file	
-				try
-				{	
-					FileOutputStream fileOutputStream = new FileOutputStream(new File(TOMCAT_HOME+"\\webapps\\BestDeals\\PaymentDetails.txt"));
-					ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
-					objectOutputStream.writeObject(orderPayments);
-					objectOutputStream.flush();
-					objectOutputStream.close();       
-					fileOutputStream.close();
-				}
-				catch(Exception e)
-				{
+				// try
+				// {	MySqlDataStoreUtilities.insertOrder(orderId,username(),orderName,orderPrice,userAddress,creditCardNo);
+				// 	// FileOutputStream fileOutputStream = new FileOutputStream(new File(TOMCAT_HOME+"\\webapps\\BestDeals\\PaymentDetails.txt"));
+				// 	// ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+				// 	// objectOutputStream.writeObject(orderPayments);
+				// 	// objectOutputStream.flush();
+				// 	// objectOutputStream.close();       
+				// 	// fileOutputStream.close();
+				// }
+				// catch(Exception e)
+				// {
 				
-				}	
+				// }	
 			}else
 			{
 				pw.print("<h4 style='color:red'>Please select any product</h4>");

@@ -25,15 +25,17 @@ public class Login extends HttpServlet {
 		String password = request.getParameter("password");
 		String usertype = request.getParameter("usertype");
 		HashMap<String, User> hm=new HashMap<String, User>();
+		String error="Please check your username, password and user type!";
 		String TOMCAT_HOME = System.getProperty("catalina.home");
 		//user details are validated using a file 
 		//if the file containts username and passoword user entered user will be directed to home page
 		//else error message will be shown
 		try
 		{		
-          FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\BestDeals\\UserDetails.txt"));
-          ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);	      
-		  hm = (HashMap)objectInputStream.readObject();
+			hm=MySqlDataStoreUtilities.selectUser();
+        //   FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\BestDeals\\UserDetails.txt"));
+        //   ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);	      
+		//   hm = (HashMap)objectInputStream.readObject();
 		}
 		catch(Exception e)
 		{
@@ -43,7 +45,8 @@ public class Login extends HttpServlet {
 		if(user!=null)
 		{
 		 String user_password = user.getPassword();
-		 if (password.equals(user_password)) 
+		 String user_type = user.getUsertype();
+		 if (password.equals(user_password) && usertype.equals(user_type)) 
 			{
 			HttpSession session = request.getSession(true);
 			session.setAttribute("username", user.getName());
@@ -51,8 +54,17 @@ public class Login extends HttpServlet {
 			response.sendRedirect("Home");
 			return;
 			}
+			else{
+				error = "Please check your username, password and user type!";
+				if(!password.equals(user_password)){
+					error = "Please check your password!";
+				} else if(!usertype.equals(user_type)){
+					error = "Please check your user type!";
+				} 
+				
+			}
 		}
-		displayLogin(request, response, pw, true);
+		displayLogin(request, response, pw, error);
 	}
 
 	@Override
@@ -60,13 +72,13 @@ public class Login extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter pw = response.getWriter();
-		displayLogin(request, response, pw, false);
+		displayLogin(request, response, pw, "");
 	}
 
 
 	/*  Login Screen is Displayed, Registered User specifies credentials and logins into the SoundSystem Speed Application. */
 	protected void displayLogin(HttpServletRequest request,
-			HttpServletResponse response, PrintWriter pw, boolean error)
+			HttpServletResponse response, PrintWriter pw, String error)
 			throws ServletException, IOException {
 
 		Utilities utility = new Utilities(request, pw);
@@ -75,8 +87,8 @@ public class Login extends HttpServlet {
 		pw.print("<h2 class='title meta'><a style='font-size: 24px;'>Login</a></h2>"
 				+ "<div class='entry'>"
 				+ "<div style='width:400px; margin:25px; margin-left: auto;margin-right: auto;'>");
-		if (error)
-			pw.print("<h4 style='color:red'>Please check your username, password and user type!</h4>");
+		if (!error.equals(""))
+			pw.print("<h4 style='color:red'>"+error+"</h4>");
 		HttpSession session = request.getSession(true);
 		if(session.getAttribute("login_msg")!=null){			
 			pw.print("<h4 style='color:red'>"+session.getAttribute("login_msg")+"</h4>");

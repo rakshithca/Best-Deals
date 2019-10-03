@@ -237,19 +237,6 @@ public class modifyproduct extends HttpServlet {
                             }
                             SaxParserDataStore.smartwatches.remove(product_id);
 							break;
-				/*case "TV" : for(Map.Entry<String,TV> entry : SaxParserDataStore.TVs.entrySet())
-                        	{
-                            if(entry.getValue().getRetailer().equals(manufacturer_prod) && entry.getValue().getId().equals(product_id))
-                                {
-                                    product_name = entry.getValue().getName();
-                                    discount_amt = entry.getValue().getDiscount();
-                                    condition_prod = entry.getValue().getCondition();
-                                    price_amt = entry.getValue().getPrice();
-                                    image=entry.getValue().getImage();
-                                }
-                            }
-                            SaxParserDataStore.TV.remove(product_id);
-							break; */
 				
 
 				case "headphone" : for(Map.Entry<String,Headphone> entry : SaxParserDataStore.headphones.entrySet())
@@ -383,7 +370,7 @@ public class modifyproduct extends HttpServlet {
 			+"</td>"
 			+"<td>"
 			+"<div class='shipping-input-fields'>"
-			+"<input type='text' name='product_name' value="+product_name+" class='login-input' style='width:249px; height:24px' required/>"
+			+"<input type='text' name='product_name' value='"+product_name+"' class='login-input' style='width:249px; height:24px' required/>"
 			+"</div>"
 			+"</td>"
 			+"</tr>"
@@ -396,7 +383,7 @@ public class modifyproduct extends HttpServlet {
 			+"</td>"
 			+"<td>"
 			+"<div class='shipping-input-fields'>"
-			+"<input type='text' name='product_id' value="+product_id+" class='login-input' style='width:249px; height:24px' required/>"
+			+"<input type='text' name='product_id' value='"+product_id+"' class='login-input' style='width:249px; height:24px' required/>"
 			+"</div>"
 			+"</td>"
 			+"</tr>"
@@ -435,7 +422,7 @@ public class modifyproduct extends HttpServlet {
 			+"<td>"
 			+"<div class='shipping-input-fields'>"
 			+"<select name='display_under' style='width:249px; height:35px' required>" 
-			 +"<option value=''>-----Select----</option>" 
+			//  +"<option value=''>-----Select----</option>" 
 			 +"<option value='TV'>TV</option>"
 			 +"<option value='soundsystem'>Sound System</option>"
 			 +"<option value='phone'>Phone</option>"
@@ -485,7 +472,7 @@ public class modifyproduct extends HttpServlet {
 			+"</tr>"
 			+"</table>"
 			+"</form>" 
-			+"</div></div></div>");
+			+"</div></div></div><script> document.getElementsByName('display_under')[0].value = '"+display_under+"' </script>");
 		utility.printHtml("Footer.html");
 		 }
 	

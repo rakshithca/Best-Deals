@@ -17,14 +17,16 @@ public class OrderPayment implements Serializable{
 	private double orderPrice;
 	private String userAddress;
 	private String creditCardNo;
+	private String deliveryDate;
 	
-	public OrderPayment(int orderId,String userName,String orderName,double orderPrice,String userAddress,String creditCardNo){
+	public OrderPayment(int orderId,String userName,String orderName,double orderPrice,String userAddress,String creditCardNo, String deliveryDate){
 		this.orderId=orderId;
 		this.userName=userName;
 		this.orderName=orderName;
 	 	this.orderPrice=orderPrice;
 		this.userAddress=userAddress;
-	 	this.creditCardNo=creditCardNo;
+		this.creditCardNo=creditCardNo;
+		this.deliveryDate = deliveryDate;
 		}
 
 	public String getUserAddress() {
@@ -76,5 +78,12 @@ public class OrderPayment implements Serializable{
 		this.orderPrice = orderPrice;
 	}
 	
+	public String getDeliveryDate() {
+		return deliveryDate;
+	}
+
+	public void setDeliveryDate(String deliveryDate) {
+		this.deliveryDate = deliveryDate;
+	}
 
 }

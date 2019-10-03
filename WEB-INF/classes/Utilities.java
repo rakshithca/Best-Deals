@@ -144,9 +144,10 @@ public class Utilities extends HttpServlet{
 		String TOMCAT_HOME = System.getProperty("catalina.home");
 			try
 			{		
-				FileInputStream fileInputStream=new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\BestDeals\\UserDetails.txt"));
-				ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);	      
-				hm= (HashMap)objectInputStream.readObject();
+				hm=MySqlDataStoreUtilities.selectUser();
+				// FileInputStream fileInputStream=new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\BestDeals\\UserDetails.txt"));
+				// ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);	      
+				// hm= (HashMap)objectInputStream.readObject();
 			}
 			catch(Exception e)
 			{
@@ -169,9 +170,11 @@ public class Utilities extends HttpServlet{
 		String TOMCAT_HOME = System.getProperty("catalina.home");
 			try
 			{
-				FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\BestDeals\\PaymentDetails.txt"));
-				ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);	      
-				orderPayments = (HashMap)objectInputStream.readObject();
+				orderPayments=MySqlDataStoreUtilities.selectOrder();
+
+				// FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\BestDeals\\PaymentDetails.txt"));
+				// ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);	      
+				// orderPayments = (HashMap)objectInputStream.readObject();
 			}
 			catch(Exception e)
 			{
@@ -267,15 +270,17 @@ public class Utilities extends HttpServlet{
 	}
 	// store the payment details for orders
 	public void storePayment(int orderId,
-		String orderName,double orderPrice,String userName,String userAddress,String creditCardNo){
+		String orderName,double orderPrice,String userName,String userAddress,String creditCardNo, String newDate){
 		HashMap<Integer, ArrayList<OrderPayment>> orderPayments= new HashMap<Integer, ArrayList<OrderPayment>>();
 		String TOMCAT_HOME = System.getProperty("catalina.home");
 			// get the payment details file 
 			try
 			{
-				FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\BestDeals\\PaymentDetails.txt"));
-				ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);	      
-				orderPayments = (HashMap)objectInputStream.readObject();
+				orderPayments=MySqlDataStoreUtilities.selectOrder();
+
+			// 	FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\BestDeals\\PaymentDetails.txt"));
+			// 	ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);	      
+			// 	orderPayments = (HashMap)objectInputStream.readObject();
 			}
 			catch(Exception e)
 			{
@@ -292,19 +297,20 @@ public class Utilities extends HttpServlet{
 				orderPayments.put(orderId, arr);
 			}
 		ArrayList<OrderPayment> listOrderPayment = orderPayments.get(orderId);		
-		OrderPayment orderpayment = new OrderPayment(orderId,username(),orderName,orderPrice,userAddress,creditCardNo);
+		OrderPayment orderpayment = new OrderPayment(orderId,username(),orderName,orderPrice,userAddress,creditCardNo,newDate);
 		listOrderPayment.add(orderpayment);	
 			
 			// add order details into file
 
 			try
 			{	
-				FileOutputStream fileOutputStream = new FileOutputStream(new File(TOMCAT_HOME+"\\webapps\\BestDeals\\PaymentDetails.txt"));
-				ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
-            	objectOutputStream.writeObject(orderPayments);
-				objectOutputStream.flush();
-				objectOutputStream.close();       
-				fileOutputStream.close();
+				MySqlDataStoreUtilities.insertOrder(orderId,username(),orderName,orderPrice,userAddress,creditCardNo,newDate);
+				// FileOutputStream fileOutputStream = new FileOutputStream(new File(TOMCAT_HOME+"\\webapps\\BestDeals\\PaymentDetails.txt"));
+				// ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+            	// objectOutputStream.writeObject(orderPayments);
+				// objectOutputStream.flush();
+				// objectOutputStream.close();       
+				// fileOutputStream.close();
 			}
 			catch(Exception e)
 			{

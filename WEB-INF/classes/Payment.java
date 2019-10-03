@@ -53,7 +53,7 @@ public class Payment extends HttpServlet {
 
 				//set the parameter for each column and execute the prepared statement
 
-				utility.storePayment(orderId,oi.getName(),oi.getPrice(),userName,userAddress,creditCardNo);
+				utility.storePayment(orderId,oi.getName(),oi.getPrice(),userName,userAddress,creditCardNo,df.format(newDate));
 			}
 
 			//remove the order details from cart after processing

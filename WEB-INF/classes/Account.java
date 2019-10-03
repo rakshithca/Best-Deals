@@ -61,9 +61,10 @@ public class Account extends HttpServlet {
 			String TOMCAT_HOME = System.getProperty("catalina.home");
 			try
 				{
-					FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\BestDeals\\PaymentDetails.txt"));
-					ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);	      
-					orderPayments = (HashMap)objectInputStream.readObject();
+					orderPayments=MySqlDataStoreUtilities.selectOrder();
+					// FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\BestDeals\\PaymentDetails.txt"));
+					// ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);	      
+					// orderPayments = (HashMap)objectInputStream.readObject();
 				}
 			catch(Exception e)
 				{
@@ -144,7 +145,7 @@ public class Account extends HttpServlet {
 	protected void showproductList(PrintWriter pw) throws ServletException, IOException {
 
 		pw.print("<br><br><br><br><br><h3>Product List</h3>");
-		pw.print("<div class='entry' style='overflow: auto;height: 500px;'><table class='gridtable' >");
+		pw.print("<div class='entry' style='overflow: auto;height: 35em;'><table class='gridtable' >");
 		pw.print("<tr>");
 		pw.print("<td>Name</td><td>Price</td><td>Manufracturer</td><td>Category</td><td colspan=2></td>");
 		pw.print("</tr>");
@@ -155,7 +156,7 @@ public class Account extends HttpServlet {
 			FitnessWatch fitnesswatch = entry.getValue();
 			pw.print("<tr>");
 			pw.print("<td>"+fitnesswatch.getName()+"</td><td>"+fitnesswatch.getPrice()+"</td><td>"+fitnesswatch.getRetailer()+"</td><td>Fitness Watch</td>");
-			pw.print("<td><a href='modifyproduct?type=fitnesswatch&maker="+fitnesswatch.getRetailer()+"&product_id=product_id"+fitnesswatch.getId()+"'>Update Products</a><br></td>");
+			pw.print("<td><a href='modifyproduct?type=fitnesswatch&maker="+fitnesswatch.getRetailer()+"&product_id="+fitnesswatch.getId()+"'>Update Products</a><br></td>");
 			pw.print("<td><a href='deleteproduct?type=fitnesswatch&product_id="+fitnesswatch.getId()+"'>Delete Products</a></td>");
 			pw.print("</tr>");
 		}
@@ -255,16 +256,18 @@ public class Account extends HttpServlet {
 		String TOMCAT_HOME = System.getProperty("catalina.home");
 
 		pw.print("<br><br><br><br><br><h3>Orders List</h3>");
-		pw.print("<div class='entry' style='overflow: auto;height: 500px;'><table class='gridtable' >");
+		pw.print("<div class='entry' style='overflow: auto;height: 35em;'><table class='gridtable' >");
 		pw.print("<tr>");
 		pw.print("<td> Order ID</td><td>Username</td><td>order name </td><td>Order price<td colspan=2></td>");
 		pw.print("</tr>");
 		
 			try
 			{
-				FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\BestDeals\\PaymentDetails.txt"));
-				ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);	      
-				orderPayments = (HashMap)objectInputStream.readObject();
+				orderPayments=MySqlDataStoreUtilities.selectOrder();
+
+				// FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\BestDeals\\PaymentDetails.txt"));
+				// ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);	      
+				// orderPayments = (HashMap)objectInputStream.readObject();
 			}
 			catch(Exception e)
 			{

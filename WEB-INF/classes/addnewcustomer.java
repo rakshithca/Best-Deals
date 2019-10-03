@@ -28,12 +28,13 @@ public class addnewcustomer extends HttpServlet {
 
 			try
 			{
- 			 FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\BestDeals\\UserDetails.txt"));
-			 ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);	      
-             hm= (HashMap)objectInputStream.readObject();
-            //  objectInputStream.flush();
-             objectInputStream.close();       
-             fileInputStream.close();
+				hm=MySqlDataStoreUtilities.selectUser();
+ 			//  FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\BestDeals\\UserDetails.txt"));
+			//  ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);	      
+            //  hm= (HashMap)objectInputStream.readObject();
+            // //  objectInputStream.flush();
+            //  objectInputStream.close();       
+            //  fileInputStream.close();
 			}
 			catch(Exception e)
 			{
@@ -56,13 +57,14 @@ public class addnewcustomer extends HttpServlet {
 
                 User user = new User(product_id,product_description,usertype);
                 hm.put(product_name, user);
-                
-			    FileOutputStream fileOutputStream = new FileOutputStream(TOMCAT_HOME+"\\webapps\\BestDeals\\UserDetails.txt");
-        		ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
-           	 	objectOutputStream.writeObject(hm);
-				objectOutputStream.flush();
-				objectOutputStream.close();       
-				fileOutputStream.close();
+				
+				MySqlDataStoreUtilities.insertUser(product_id,product_description,usertype);
+			    // FileOutputStream fileOutputStream = new FileOutputStream(TOMCAT_HOME+"\\webapps\\BestDeals\\UserDetails.txt");
+        		// ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+           	 	// objectOutputStream.writeObject(hm);
+				// objectOutputStream.flush();
+				// objectOutputStream.close();       
+				// fileOutputStream.close();
 				HttpSession session = request.getSession(true);				
 				session.setAttribute("login_msg", "Your "+usertype+" account has been created. Please login");
 				if(!utility.isLoggedin()){

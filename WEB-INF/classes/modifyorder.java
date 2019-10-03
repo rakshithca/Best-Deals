@@ -56,6 +56,7 @@ public class modifyorder extends HttpServlet {
         Double order_price=Double.parseDouble(request.getParameter("product_price"));
         String order_address="";
         String order_credit = "";
+        String delivery_date = "";
         String new_product_id = request.getParameter("product_id"); 
         
 
@@ -74,9 +75,11 @@ public class modifyorder extends HttpServlet {
             }
             try
 			{
-				FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\BestDeals\\PaymentDetails.txt"));
-				ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);	      
-				orderPayments = (HashMap)objectInputStream.readObject();
+                orderPayments=MySqlDataStoreUtilities.selectOrder();
+
+				// FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\BestDeals\\PaymentDetails.txt"));
+				// ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);	      
+				// orderPayments = (HashMap)objectInputStream.readObject();
 			}
 			catch(Exception e)
 			{
@@ -94,6 +97,7 @@ public class modifyorder extends HttpServlet {
                 if(oi.getUserName().equals(userName) && oi.getOrderId() == order_id){
                     order_address = oi.getUserAddress();
                     order_credit = oi.getCreditCardNo();
+                    delivery_date = oi.getDeliveryDate();
                 }
             }
         }
@@ -105,7 +109,7 @@ public class modifyorder extends HttpServlet {
         pw.print("<a style='font-size: 24px;'>Product List</a>");
         pw.print("</h2><div class='entry'>");
         if(order_address!="" && order_credit!=""){
-            utility.storePayment(order_id,order_name,order_price,userName,order_address,order_credit);
+            utility.storePayment(order_id,order_name,order_price,userName,order_address,order_credit,delivery_date);
             pw.print("<h4 style='color:red'>New Product Has been addded to your order "+order_id+" </h4>");
         } else {
             pw.print("<h4 style='color:red'>Something Went Wrong</h4>");
