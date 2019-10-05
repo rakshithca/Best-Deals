@@ -77,7 +77,7 @@ public static HashMap<String, ArrayList<Review>> selectReview()
 				reviews.put(obj.getString("ProductModelID"), arr);
 			}
 			ArrayList<Review> listReview = reviews.get(obj.getString("ProductModelID"));		
-			Review review =new Review(obj.getString("ProductModelID"),obj.getString("UserID"),obj.getString("ProductCategory"),obj.getString("ManufacturerName"),
+			Review review =new Review(obj.getString("ProductModelName"),obj.getString("UserID"),obj.getString("ProductCategory"),obj.getString("ManufacturerName"),
 				obj.getString("ReviewRating"),obj.getString("ReviewDate"),obj.getString("ReviewText"),obj.getString("RetailerZip"),obj.getString("ProductPrice"),obj.getString("RetailerCity"));
 			//add to review hashmap
 			listReview.add(review);
@@ -107,7 +107,7 @@ public static HashMap<String, ArrayList<Review>> selectReview()
 	  while(cursor.hasNext()) {
 		  BasicDBObject obj = (BasicDBObject) cursor.next();
 		  		  		   
-		  String prodcutnm = obj.get("ProductModelID").toString();
+		  String prodcutnm = obj.get("ProductModelName").toString();
 		  String rating = obj.get("ReviewRating").toString();
 	      Bestrating best = new Bestrating(prodcutnm,rating);
 		  Bestrate.add(best);
@@ -152,7 +152,7 @@ public static HashMap<String, ArrayList<Review>> selectReview()
 		  
 	  
       getConnection();
-      DBObject groupProducts = new BasicDBObject("_id","$ProductModelID"); 
+      DBObject groupProducts = new BasicDBObject("_id","$ProductModelName"); 
 	  groupProducts.put("count",new BasicDBObject("$sum",1));
 	  DBObject group = new BasicDBObject("$group",groupProducts);
 	  DBObject limit=new BasicDBObject();
@@ -189,14 +189,14 @@ public static ArrayList<Review> selectReviewForChart() {
             getConnection();
             Map<String, Object> dbObjIdMap = new HashMap<String, Object>();
             dbObjIdMap.put("RetailerZip", "$RetailerZip");
-            dbObjIdMap.put("ProductModelID", "$ProductModelID");
+            dbObjIdMap.put("ProductModelName", "$ProductModelName");
             DBObject groupFields = new BasicDBObject("_id", new BasicDBObject(dbObjIdMap));
             groupFields.put("count", new BasicDBObject("$sum", 1));
             DBObject group = new BasicDBObject("$group", groupFields);
 
             DBObject projectFields = new BasicDBObject("_id", 0);
             projectFields.put("RetailerZip", "$_id");
-            projectFields.put("ProductModelID", "$ProductModelID");
+            projectFields.put("ProductModelID", "$ProductModelName");
             projectFields.put("reviewCount", "$count");
             DBObject project = new BasicDBObject("$project", projectFields);
 
