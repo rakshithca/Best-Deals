@@ -97,9 +97,12 @@ public class LaptopList extends HttpServlet {
 					"<input type='hidden' name='maker' value='"+CategoryName+"'>"+
 					"<input type='hidden' name='access' value=''>"+
 					"<input type='submit' class='btnbuy' value='Buy Now'></form></li>");
-			pw.print("<li><form method='post' action='WriteReview'>"+"<input type='hidden' name='name' value='"+entry.getKey()+"'>"+
+			pw.print("<li><form method='post' action='WriteReview'>"
+					+"<input type='hidden' name='id' value='"+entry.getKey()+"'>"+
+					"<input type='hidden' name='name' value='"+Laptop.getName()+"'>"+
 					"<input type='hidden' name='type' value='laptops'>"+
 					"<input type='hidden' name='maker' value='"+CategoryName+"'>"+
+					"<input type='hidden' name='price' value='"+Laptop.getPrice()+"'>"+
 					"<input type='hidden' name='access' value=''>"+
 				    "<input type='submit' value='WriteReview' class='btnreview'></form></li>");
 			pw.print("<li><form method='post' action='ViewReview'>"+"<input type='hidden' name='name' value='"+entry.getKey()+"'>"+

@@ -78,7 +78,7 @@
 </TVCatalog>
 <!--***************************************************************************************-->
 <PhoneCatalog>
-    <phone id="ipad">
+    <phone id="ipad1">
         <name>Apple IPhone 11 Pro</name>
         <price>189.99</price>
         <image>apple1.jpg</image>
@@ -86,7 +86,7 @@
         <condition>New</condition>
         <discount>40.0</discount>
     </phone>
-    <phone id="ipad3">
+    <phone id="ipad3.1">
         <name>Apple IPhone 10</name>
         <price>189.99</price>
         <image>apple2.jpg</image>
@@ -94,7 +94,7 @@
         <condition>Used</condition>
         <discount>20.0</discount>
     </phone>
-    <phone id="Surface">
+    <phone id="Surface33">
         <name>V10</name>
         <price>299.99</price>
         <image>m1.jpg</image>
@@ -102,7 +102,7 @@
         <condition>New</condition>
         <discount>15.0</discount>
     </phone>
-    <phone id="Surface4">
+    <phone id="Surface4.11">
         <name>G5</name>
         <price>299.99</price>
         <image>m2.jpg</image>
@@ -110,7 +110,7 @@
         <condition>New</condition>
         <discount>15.0</discount>
     </phone>
-    <phone id="Samsung2">
+    <phone id="Samsung2.1">
         <name>Galaxy S10</name>
         <price>150.99</price>
         <image>s1.jpg</image>
@@ -122,7 +122,7 @@
 </PhoneCatalog>
 <!-- **************************************************************************************** -->
 <SoundSystemsCatalog>
-<soundsystem id="g1">
+<soundsystem id="g1.2">
         <name>Companion</name>
         <price>50.99</price>
         <image>ea_fifa.jpg</image>
@@ -130,7 +130,7 @@
         <condition>New</condition>
         <discount>15.0</discount>
 </soundsystem>
-<soundsystem id="g2">
+<soundsystem id="g2.2">
         <name>Revolve</name>
         <price>50.99</price>
         <image>ea_nfs.jpg</image>
@@ -138,7 +138,7 @@
         <condition>Refurbished</condition>
         <discount>15.0</discount>
 </soundsystem>
-<soundsystem id="g3">
+<soundsystem id="g3.1">
         <name>StockWell</name>
         <price>50.99</price>
         <image>activision_cod.jpg</image>
@@ -146,7 +146,7 @@
         <condition>New</condition>
         <discount>15.0</discount>
 </soundsystem>
-<soundsystem id="g5">
+<soundsystem id="g5.9">
         <name>Stanmore</name>
         <price>50.99</price>
         <image>ea_nfs2.jpg</image>
@@ -154,7 +154,7 @@
         <condition>New</condition>
         <discount>15.0</discount>
 </soundsystem>
-<soundsystem id="g4">
+<soundsystem id="g4.1">
         <name>DXR10</name>
         <price>50.99</price>
         <image>tti_evolve.jpg</image>
@@ -165,7 +165,7 @@
 </SoundSystemsCatalog>
 <!--********************************************************************************************-->
 <LaptopCatalog>
-    <laptop id="ipad">
+    <laptop id="ipad2">
         <name>Apple MacBook Pro</name>
         <price>189.99</price>
         <image>apple1.jpg</image>
@@ -173,7 +173,7 @@
         <condition>New</condition>
         <discount>40.0</discount>
     </laptop>
-    <laptop id="ipad3">
+    <laptop id="ipad3.2">
         <name>Apple MacBook Air</name>
         <price>189.99</price>
         <image>apple2.jpg</image>
@@ -181,7 +181,7 @@
         <condition>Used</condition>
         <discount>20.0</discount>
     </laptop>
-    <laptop id="Surface">
+    <laptop id="Surface11">
         <name>Gram Thin</name>
         <price>299.99</price>
         <image>m1.jpg</image>
@@ -189,7 +189,7 @@
         <condition>New</condition>
         <discount>15.0</discount>
     </laptop>
-    <laptop id="Surface4">
+    <laptop id="Surface4.12">
         <name>Gram Pro</name>
         <price>299.99</price>
         <image>m2.jpg</image>
@@ -197,7 +197,7 @@
         <condition>New</condition>
         <discount>15.0</discount>
     </laptop>
-    <laptop id="Samsung2">
+    <laptop id="Samsung2.2">
         <name>NoteBook Pro</name>
         <price>150.99</price>
         <image>s1.jpg</image>
@@ -209,7 +209,7 @@
 </LaptopCatalog>
 <!--***********************************************************************************************-->
 <VoiceAssistantCatalog>
-<voiceassistant id="g1">
+<voiceassistant id="g1.3">
         <name>Home</name>
         <price>50.99</price>
         <image>ea_fifa.jpg</image>
@@ -217,7 +217,7 @@
         <condition>New</condition>
         <discount>15.0</discount>
 </voiceassistant>
-<voiceassistant id="g2">
+<voiceassistant id="g2.3">
         <name>Mini</name>
         <price>50.99</price>
         <image>ea_nfs.jpg</image>
@@ -225,7 +225,7 @@
         <condition>Refurbished</condition>
         <discount>15.0</discount>
 </voiceassistant>
-<voiceassistant id="g3">
+<voiceassistant id="g3.2">
         <name>Alexa</name>
         <price>50.99</price>
         <image>activision_cod.jpg</image>
@@ -233,7 +233,7 @@
         <condition>New</condition>
         <discount>15.0</discount>
 </voiceassistant>
-<voiceassistant id="g5">
+<voiceassistant id="g5.1">
         <name>Bigsby</name>
         <price>50.99</price>
         <image>activision_prot.jpg</image>
@@ -241,7 +241,7 @@
         <condition>New</condition>
         <discount>15.0</discount>
 </voiceassistant>
-<voiceassistant id="g4">
+<voiceassistant id="g4.2">
         <name>Cortana</name>
         <price>50.99</price>
         <image>tti_evolve.jpg</image>
@@ -252,7 +252,7 @@
 </VoiceAssistantCatalog>
 <!--******************************************************************************************************-->
 <FitnessWatchCatalog>
-<fitnesswatch id="g1">
+<fitnesswatch id="g1.4">
         <name>Ace 2</name>
         <price>50.99</price>
         <image>ea_fifa.jpg</image>
@@ -260,7 +260,7 @@
         <condition>New</condition>
         <discount>15.0</discount>
 </fitnesswatch>
-<fitnesswatch id="g2">
+<fitnesswatch id="g2.4">
         <name>Charge 3</name>
         <price>50.99</price>
         <image>ea_nfs.jpg</image>
@@ -268,7 +268,7 @@
         <condition>Refurbished</condition>
         <discount>15.0</discount>
 </fitnesswatch>
-<fitnesswatch id="g3">
+<fitnesswatch id="g3.3">
         <name>Apple Watch 3 LTE</name>
         <price>50.99</price>
         <image>activision_cod.jpg</image>
@@ -284,7 +284,7 @@
         <condition>New</condition>
         <discount>15.0</discount>
 </fitnesswatch>
-<fitnesswatch id="g4">
+<fitnesswatch id="g4.3">
         <name>Forerunner</name>
         <price>50.99</price>
         <image>tti_evolve.jpg</image>
@@ -297,7 +297,7 @@
 <!--*********************************************************************************************************-->
 
 <SmartWatchCatalog>
-<smartwatch id="g1">
+<smartwatch id="g1.5">
         <name>Carlyle</name>
         <price>50.99</price>
         <image>ea_fifa.jpg</image>
@@ -305,7 +305,7 @@
         <condition>New</condition>
         <discount>15.0</discount>
 </smartwatch>
-<smartwatch id="g2">
+<smartwatch id="g2.1">
         <name>Gen 3</name>
         <price>50.99</price>
         <image>ea_nfs.jpg</image>
@@ -313,7 +313,7 @@
         <condition>Refurbished</condition>
         <discount>15.0</discount>
 </smartwatch>
-<smartwatch id="g5">
+<smartwatch id="g5.3">
         <name>Versa 2</name>
         <price>50.99</price>
         <image>activision_cod.jpg</image>
@@ -321,7 +321,7 @@
         <condition>New</condition>
         <discount>15.0</discount>
 </smartwatch>
-<smartwatch id="g3">
+<smartwatch id="g3.4">
         <name>Smart Ionic</name>
         <price>50.99</price>
         <image>activision_cod.jpg</image>
@@ -329,7 +329,7 @@
         <condition>New</condition>
         <discount>15.0</discount>
 </smartwatch>
-<smartwatch id="g4">
+<smartwatch id="g4.4">
         <name>Apple Watch 3 WiFi</name>
         <price>50.99</price>
         <image>tti_evolve.jpg</image>
@@ -340,7 +340,7 @@
 </SmartWatchCatalog>
 <!--****************************************************************************************-->
 <HeadphoneCatalog>
-    <headphone id="ipad">
+    <headphone id="ipad3.0">
         <name>Studio 3</name>
         <price>189.99</price>
         <image>apple1.jpg</image>
@@ -348,7 +348,7 @@
         <condition>New</condition>
         <discount>40.0</discount>
     </headphone>
-    <headphone id="ipad3">
+    <headphone id="ipad3.3">
         <name>Solo 2</name>
         <price>189.99</price>
         <image>apple2.jpg</image>
@@ -356,7 +356,7 @@
         <condition>Used</condition>
         <discount>20.0</discount>
     </headphone>
-    <headphone id="Surface">
+    <headphone id="Surface22">
         <name>HD450</name>
         <price>299.99</price>
         <image>m1.jpg</image>
@@ -364,7 +364,7 @@
         <condition>New</condition>
         <discount>15.0</discount>
     </headphone>
-    <headphone id="Surface4">
+    <headphone id="Surface4.13">
         <name>Pro280</name>
         <price>299.99</price>
         <image>m2.jpg</image>
@@ -385,7 +385,7 @@
 
 <!--**********************************************************************************-->
 <WirelessplansCatalog>
-<wirelessplan id="g1">
+<wirelessplan id="g1.1">
         <name>Basic:unlimited Walk+Text+Talk</name>
         <price>50.99</price>
         <image>ea_fifa.jpg</image>
@@ -393,7 +393,7 @@
         <condition>New</condition>
         <discount>15.0</discount>
 </wirelessplan>
-<wirelessplan id="g3">
+<wirelessplan id="g3.422">
         <name>Premium:Added Music and Video</name>
         <price>50.99</price>
         <image>activision_cod.jpg</image>
@@ -401,7 +401,7 @@
         <condition>New</condition>
         <discount>15.0</discount>
 </wirelessplan>
-<wirelessplan id="g4">
+<wirelessplan id="g4.5">
         <name>Ultimate: Speed in Peak Hours</name>
         <price>50.99</price>
         <image>tti_evolve.jpg</image>
