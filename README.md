@@ -5,6 +5,7 @@ E commerce website like best buy. Developed using JSP and servlets
 Dependencies to Install:
 Apache Tomcat 
 MySQL
+MongoDB
 
 **How to run:**
 Install apache-tomcat-7.0.34
