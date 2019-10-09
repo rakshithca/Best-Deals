@@ -580,6 +580,28 @@ public static HashMap<String,User> selectUser()
 }
 
 
+public static ArrayList<String> getAllProducts(){
+
+	ArrayList<String> hm=new ArrayList<String>();
+	try 
+	{
+		getConnection();
+		Statement stmt=conn.createStatement();
+		String selectCustomerQuery="select productName from  productdetails";
+		ResultSet rs = stmt.executeQuery(selectCustomerQuery);
+		while(rs.next())
+		{	
+			hm.add(rs.getString("productName"));
+		}
+	}
+	catch(Exception e)
+	{
+	}
+	return hm;
+
+}
+
+
 
 	
 }	

@@ -196,7 +196,7 @@ public static ArrayList<Review> selectReviewForChart() {
 
             DBObject projectFields = new BasicDBObject("_id", 0);
             projectFields.put("RetailerZip", "$_id");
-            projectFields.put("ProductModelID", "$ProductModelName");
+            projectFields.put("ProductModelName", "$ProductModelName");
             projectFields.put("reviewCount", "$count");
             DBObject project = new BasicDBObject("$project", projectFields);
 
@@ -214,7 +214,7 @@ public static ArrayList<Review> selectReviewForChart() {
                 BasicDBObject obj = (BasicDBObject) result;
                 Object o = com.mongodb.util.JSON.parse(obj.getString("RetailerZip"));
                 BasicDBObject dbObj = (BasicDBObject) o;
-                Review review = new Review(dbObj.getString("ProductModelID"), dbObj.getString("RetailerZip"),
+                Review review = new Review(dbObj.getString("ProductModelName"), dbObj.getString("RetailerZip"),
                         obj.getString("reviewCount"), null);
                 reviewList.add(review);
                 
