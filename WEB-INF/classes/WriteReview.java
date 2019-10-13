@@ -97,7 +97,7 @@ public class WriteReview extends HttpServlet {
 					
 					pw.print("<tr>");
 					pw.print("<td> Retailer State: </td>");
-					pw.print("<td><input type='text' sname='retailstate'> </textarea></td></tr>");
+					pw.print("<td><input type='text' name='retailerstate'></td>");
 					pw.print("</tr>");	
 				// pw.print("<tr><td colspan='2'><input type='submit' class='btnbuy' name='SubmitReview' value='SubmitReview'></td></tr></table>");
 

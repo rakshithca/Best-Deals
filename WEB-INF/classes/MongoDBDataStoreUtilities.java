@@ -21,8 +21,8 @@ return myReviews;
 }
 
 
-public static String insertReview(String productid,String productname,String username,String producttype,String productmaker,String reviewrating,String reviewdate,String reviewtext,String RetailerZip,String ProductPrice,String RetailerCity, String userage, String usergender, String useroccupation, String RetailerState)
-{
+public static String insertReview(String productid,String productname,String username,String producttype,String productmaker,String reviewrating,String reviewdate,String reviewtext,String RetailerZip,String ProductPrice,String RetailerCity, String RetailerState, String userage, String usergender, String useroccupation)
+{ 
 	try
 		{		
 			getConnection();

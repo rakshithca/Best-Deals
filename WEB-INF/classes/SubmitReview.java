@@ -44,11 +44,10 @@ public class SubmitReview extends HttpServlet {
 				String retailercity = request.getParameter("retailercity");
 				String retailerstate = request.getParameter("retailerstate");
 				String userage = request.getParameter("userage");
-				String usergender = request.getParameter("usergender");
+				String usergender = request.getParameter("gender");
 				String useroccupation = request.getParameter("useroccupation");
 
 		String message=utility.storeReview(productid,productname,producttype,productmaker,reviewrating,reviewdate,reviewtext,retailerpin,productprice,retailercity,retailerstate,userage,usergender,useroccupation);				     
-       		
 		utility.printHtml("Header.html");
 		utility.printHtml("LeftNavigationBar.html");
 		pw.print("<form name ='Cart' action='CheckOut' method='post'>");

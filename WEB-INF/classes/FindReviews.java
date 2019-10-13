@@ -117,13 +117,13 @@ public class FindReviews extends HttpServlet {
 						case "retailerZipcode":
 							filterByZip = true;	
 							System.out.println("inside if");
-							query.put("retailerpin", retailerZipcode);
+							query.put("RetailerZip", retailerZipcode);
 							break;					
 						
 						case "retailerCity": 
 							filterByCity = true;
 							if(!retailerCity.equals("All") && !groupByCity){
-								query.put("retailercity", retailerCity);
+								query.put("RetailerCity", retailerCity);
 							}							
 							break;
 							
@@ -155,27 +155,27 @@ public class FindReviews extends HttpServlet {
 				if(groupByCity){
 					groupfield="RetailerCity";
 					groupFields = new BasicDBObject("_id", 0);
-					groupFields.put("_id", "$retailercity");
+					groupFields.put("_id", "$RetailerCity");
 					groupFields.put("count", new BasicDBObject("$sum", 1));
 					groupFields.put("ProductModelName", new BasicDBObject("$push", "$ProductModelName"));
-					groupFields.put("review", new BasicDBObject("$push", "$reviewText"));
-					groupFields.put("ReviewRating", new BasicDBObject("$push", "$reviewRating"));
+					groupFields.put("ReviewText", new BasicDBObject("$push", "$ReviewText"));
+					groupFields.put("ReviewRating", new BasicDBObject("$push", "$ReviewRating"));
 					groupFields.put("ProductPrice", new BasicDBObject("$push", "$ProductPrice"));
-					groupFields.put("retailerCity", new BasicDBObject("$push", "$retailercity"));
-					groupFields.put("retailerpin", new BasicDBObject("$push", "$retailerpin"));
+					groupFields.put("RetailerCity", new BasicDBObject("$push", "$RetailerCity"));
+					groupFields.put("RetailerZip", new BasicDBObject("$push", "$RetailerZip"));
 
 					group = new BasicDBObject("$group", groupFields);
 
 					projectFields = new BasicDBObject("_id", 0);
 					projectFields.put("value", "$_id");
 					projectFields.put("ReviewValue", "$count");
-					projectFields.put("Product", "$ProductModelName");
-					projectFields.put("User", "$userName");
-					projectFields.put("Reviews", "$review");
+					projectFields.put("ProductModelName", "$ProductModelName");
+					projectFields.put("User", "$UserID");
+					projectFields.put("Reviews", "$ReviewText");
 					projectFields.put("ReviewRating", "$ReviewRating");
 				    projectFields.put("ProductPrice", "$ProductPrice");
-				    projectFields.put("retailerCity", "$retailerCity");
-				    projectFields.put("zipCode", "$retailerpin");
+				    projectFields.put("RetailerCity", "$RetailerCity");
+				    projectFields.put("zipCode", "$RetailerZip");
 
 					project = new BasicDBObject("$project", projectFields);
 					
@@ -189,24 +189,24 @@ public class FindReviews extends HttpServlet {
 					groupFields = new BasicDBObject("_id", 0);
 					groupFields.put("_id", "$ProductModelName");
 					groupFields.put("count", new BasicDBObject("$sum", 1));
-					groupFields.put("review", new BasicDBObject("$push", "$reviewText"));
-					groupFields.put("ReviewRating", new BasicDBObject("$push", "$reviewRating"));
+					groupFields.put("review", new BasicDBObject("$push", "$ReviewText"));
+					groupFields.put("ReviewRating", new BasicDBObject("$push", "$ReviewRating"));
 					groupFields.put("ProductModelName", new BasicDBObject("$push", "$ProductModelName"));
 					groupFields.put("ProductPrice", new BasicDBObject("$push", "$ProductPrice"));
-					groupFields.put("retailerCity", new BasicDBObject("$push", "$retailercity"));
-					groupFields.put("zipCode", new BasicDBObject("$push", "$retailerpin"));
+					groupFields.put("RetailerCity", new BasicDBObject("$push", "$RetailerCity"));
+					groupFields.put("zipCode", new BasicDBObject("$push", "$RetailerZip"));
 
 					group = new BasicDBObject("$group", groupFields);
 
 					projectFields = new BasicDBObject("_id", 0);
 					projectFields.put("value", "$_id");
 					projectFields.put("ReviewValue", "$count");
-					projectFields.put("Product", "$ProductModelName");
-					projectFields.put("Reviews", "$review");
+					projectFields.put("ProductModelName", "$ProductModelName");
+					projectFields.put("Reviews", "$ReviewText");
 					projectFields.put("ReviewRating", "$ReviewRating");
 					projectFields.put("ProductPrice", "$ProductPrice");
-					projectFields.put("retailerCity", "$retailerCity");
-				    projectFields.put("zipCode", "$zipCode");
+					projectFields.put("RetailerCity", "$RetailerCity");
+				    projectFields.put("zipCode", "$RetailerZip");
 
 					project = new BasicDBObject("$project", projectFields);
 					
@@ -226,7 +226,7 @@ public class FindReviews extends HttpServlet {
 		utility.printHtml("LeftNavigationBar.html");
 		pw.print("<div id='content'><div class='post'><h2 class='title meta'>");
 		pw.print("<a style='font-size: 24px;'>Data Analytics on Review</a>");
-		pw.print("</h2><div class='entry'>");
+		pw.print("</h2><div class='entry' style='overflow: auto;height: 64em;'>");
 		if(groupBy == true){		
 		
 		pw.print("<table class='gridtable'>");
@@ -266,11 +266,11 @@ public class FindReviews extends HttpServlet {
 		int detailcount=0;
 				for (DBObject result : aggregate.results()) {
 				BasicDBObject bobj = (BasicDBObject) result;
-					BasicDBList productList = (BasicDBList) bobj.get("Product");
+					BasicDBList productList = (BasicDBList) bobj.get("ProductModelName");
 		
 				BasicDBList productReview = (BasicDBList) bobj.get("Reviews");
 				BasicDBList rating = (BasicDBList) bobj.get("ReviewRating");
-						BasicDBList retailercity = (BasicDBList) bobj.get("retailerCity");
+						BasicDBList retailercity = (BasicDBList) bobj.get("RetailerCity");
 						BasicDBList zipcode = (BasicDBList) bobj.get("zipCode");
 						BasicDBList price = (BasicDBList) bobj.get("ProductPrice");
 
@@ -310,13 +310,13 @@ public class FindReviews extends HttpServlet {
 			while (dbCursor.hasNext()) {		
 			BasicDBObject bobj = (BasicDBObject) dbCursor.next();
 			
-			tableData =   "<tr><td align='center' colspan='2'>Review</td></tr><tr><td>Name: </td><td>" + bobj.getString("productName") + "</td></tr>"
+			tableData =   "<tr><td align='center' colspan='2'>Review</td></tr><tr><td>Name: </td><td>" + bobj.getString("ProductModelName") + "</td></tr>"
 						+ "<tr><td>Rating:</td><td>" + bobj.getString("ReviewRating") + "</td></tr>"
 						+ "<tr><td>Price:</td><td>" + bobj.getString("ProductPrice") + "</td></tr>"
-						+ "<tr><td>Retailer City:</td><td>" + bobj.getString("retailercity") + "</td></tr>"
-						+ "<tr><td>Date:</td><td>" + bobj.getString("reviewDate") + "</td></tr>"
-						+ "<tr><td>Review Text:</td><td>" + bobj.getString("reviewText")+"</td><tr>"
-						+ "<tr><td>RetailerZipCode:</td><td>" + bobj.getString("retailerpin")+"</td><tr>";
+						+ "<tr><td>Retailer City:</td><td>" + bobj.getString("RetailerCity") + "</td></tr>"
+						+ "<tr><td>Date:</td><td>" + bobj.getString("ReviewDate") + "</td></tr>"
+						+ "<tr><td>Review Text:</td><td>" + bobj.getString("ReviewText")+"</td><tr>"
+						+ "<tr><td>RetailerZipCode:</td><td>" + bobj.getString("RetailerZip")+"</td><tr>";
 
 				
 				 pw.print(tableData);
