@@ -45,7 +45,7 @@ public class Registration extends HttpServlet {
 		{
 			HashMap<String, User> hm=new HashMap<String, User>();
 			String TOMCAT_HOME = System.getProperty("catalina.home");
-
+			boolean dbDown = false;
 			//get the user details from file 
 
 			try
@@ -57,7 +57,7 @@ public class Registration extends HttpServlet {
 			}
 			catch(Exception e)
 			{
-				
+				dbDown = true;
 			}
 
 			// if the user already exist show error that already exist
@@ -71,20 +71,32 @@ public class Registration extends HttpServlet {
 
 				User user = new User(username,password,usertype);
 				hm.put(username, user);
-				MySqlDataStoreUtilities.insertUser(username,password,usertype);
+				try{
+					MySqlDataStoreUtilities.insertUser(username,password,usertype);
+				} catch(Exception e){
+					dbDown = true;
+				}
+				
 			    // FileOutputStream fileOutputStream = new FileOutputStream(TOMCAT_HOME+"\\webapps\\BestDeals\\UserDetails.txt");
         		// ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
            	 	// objectOutputStream.writeObject(hm);
 				// objectOutputStream.flush();
 				// objectOutputStream.close();       
 				// fileOutputStream.close();
-				HttpSession session = request.getSession(true);				
-				session.setAttribute("login_msg", "Your "+usertype+" account has been created. Please login");
+				HttpSession session = request.getSession(true);		
+				if(dbDown){
+					session.setAttribute("login_msg", "DB is not up and running");
+				}	else {
+					session.setAttribute("login_msg", "Your "+usertype+" account has been created. Please login");
+				}	
+				
 				if(!utility.isLoggedin()){
 					response.sendRedirect("Login"); return;
 				} else {
 					response.sendRedirect("Account"); return;
 				}
+
+
 			}
 		}
 
