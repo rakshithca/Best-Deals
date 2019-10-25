@@ -46,8 +46,8 @@ public static void Insertproducts()
 		
 				
 		
-		String insertProductQurey = "INSERT INTO  Productdetails(ProductType,Id,productName,productPrice,productImage,productManufacturer,productCondition,productDiscount)" +
-		"VALUES (?,?,?,?,?,?,?,?);";
+		String insertProductQurey = "INSERT INTO  Productdetails(ProductType,Id,productName,productPrice,productImage,productManufacturer,productCondition,productDiscount,quantity,rebate)" +
+		"VALUES (?,?,?,?,?,?,?,?,?,?);";
 		for(Map.Entry<String,Accessory> entry : SaxParserDataStore.accessories.entrySet())
 		{   
 			String name = "accessories";
@@ -62,7 +62,8 @@ public static void Insertproducts()
 			pst.setString(6,acc.getRetailer());
 			pst.setString(7,acc.getCondition());
 			pst.setDouble(8,acc.getDiscount());
-			
+			pst.setInt(9,acc.getQuantity());
+			pst.setString(10,acc.getRebate());
 			pst.executeUpdate();
 			
 			
@@ -81,7 +82,8 @@ public static void Insertproducts()
 			pst.setString(6,con.getRetailer());
 			pst.setString(7,con.getCondition());
 			pst.setDouble(8,con.getDiscount());
-			
+			pst.setInt(9,con.getQuantity());
+			pst.setString(10,con.getRebate());
 			pst.executeUpdate();
 			try{
 			HashMap<String,String> acc = con.getAccessories();
@@ -112,7 +114,8 @@ public static void Insertproducts()
 			pst.setString(6,game.getRetailer());
 			pst.setString(7,game.getCondition());
 			pst.setDouble(8,game.getDiscount());
-			
+			pst.setInt(9,game.getQuantity());
+			pst.setString(10,game.getRebate());
 			pst.executeUpdate();
 			
 			
@@ -131,7 +134,8 @@ public static void Insertproducts()
 			pst.setString(6,tablet.getRetailer());
 			pst.setString(7,tablet.getCondition());
 			pst.setDouble(8,tablet.getDiscount());
-			
+			pst.setInt(9,tablet.getQuantity());
+			pst.setString(10,tablet.getRebate());
 			pst.executeUpdate();
 			
 			
@@ -150,7 +154,8 @@ public static void Insertproducts()
 			pst.setString(6,tablet.getRetailer());
 			pst.setString(7,tablet.getCondition());
 			pst.setDouble(8,tablet.getDiscount());
-			
+			pst.setInt(9,tablet.getQuantity());
+			pst.setString(10,tablet.getRebate());
 			pst.executeUpdate();
 			
 			
@@ -169,7 +174,8 @@ public static void Insertproducts()
 			pst.setString(6,tablet.getRetailer());
 			pst.setString(7,tablet.getCondition());
 			pst.setDouble(8,tablet.getDiscount());
-			
+			pst.setInt(9,tablet.getQuantity());
+			pst.setString(10,tablet.getRebate());
 			pst.executeUpdate();
 			
 			
@@ -188,7 +194,8 @@ public static void Insertproducts()
 			pst.setString(6,tablet.getRetailer());
 			pst.setString(7,tablet.getCondition());
 			pst.setDouble(8,tablet.getDiscount());
-			
+			pst.setInt(9,tablet.getQuantity());
+			pst.setString(10,tablet.getRebate());
 			pst.executeUpdate();
 			
 			
@@ -207,7 +214,8 @@ public static void Insertproducts()
 			pst.setString(6,tablet.getRetailer());
 			pst.setString(7,tablet.getCondition());
 			pst.setDouble(8,tablet.getDiscount());
-			
+			pst.setInt(9,tablet.getQuantity());
+			pst.setString(10,tablet.getRebate());
 			pst.executeUpdate();
 			
 			
@@ -226,7 +234,8 @@ public static void Insertproducts()
 			pst.setString(6,tablet.getRetailer());
 			pst.setString(7,tablet.getCondition());
 			pst.setDouble(8,tablet.getDiscount());
-			
+			pst.setInt(9,tablet.getQuantity());
+			pst.setString(10,tablet.getRebate());
 			pst.executeUpdate();
 		}
 		
@@ -244,7 +253,8 @@ public static void Insertproducts()
 			pst.setString(6,tablet.getRetailer());
 			pst.setString(7,tablet.getCondition());
 			pst.setDouble(8,tablet.getDiscount());
-			
+			pst.setInt(9,tablet.getQuantity());
+			pst.setString(10,tablet.getRebate());
 			pst.executeUpdate();
 		}
 		
@@ -267,7 +277,7 @@ public static HashMap<String,TV> getTVs()
 		ResultSet rs = pst.executeQuery();
 	
 		while(rs.next())
-		{	TV con = new TV(rs.getString("productName"),rs.getDouble("productPrice"),rs.getString("productImage"),rs.getString("productManufacturer"),rs.getString("productCondition"),rs.getDouble("productDiscount"));
+		{	TV con = new TV(rs.getString("productName"),rs.getDouble("productPrice"),rs.getString("productImage"),rs.getString("productManufacturer"),rs.getString("productCondition"),rs.getDouble("productDiscount"),rs.getInt("quantity"), rs.getString("rebate"));
 				hm.put(rs.getString("Id"), con);
 				con.setId(rs.getString("Id"));
 				
@@ -309,11 +319,11 @@ public static HashMap<String,SoundSystem > getSoundSystems()
 		
 		String selectTablet="select * from  Productdetails where ProductType=?";
 		PreparedStatement pst = conn.prepareStatement(selectTablet);
-		pst.setString(1,"tablets");
+		pst.setString(1,"soundsystems");
 		ResultSet rs = pst.executeQuery();
 	
 		while(rs.next())
-		{	SoundSystem tab = new SoundSystem(rs.getString("Id"),rs.getString("productName"),rs.getDouble("productPrice"),rs.getString("productImage"),rs.getString("productManufacturer"),rs.getString("productCondition"),rs.getDouble("productDiscount"));
+		{	SoundSystem tab = new SoundSystem(rs.getString("Id"),rs.getString("productName"),rs.getDouble("productPrice"),rs.getString("productImage"),rs.getString("productManufacturer"),rs.getString("productCondition"),rs.getDouble("productDiscount"),rs.getInt("quantity"), rs.getString("rebate"));
 				hm.put(rs.getString("Id"), tab);
 				tab.setId(rs.getString("Id"));
 
@@ -324,6 +334,185 @@ public static HashMap<String,SoundSystem > getSoundSystems()
 	}
 	return hm;			
 }
+
+
+public static HashMap<String,FitnessWatch> getFitnessWatches()
+{	
+	HashMap<String,FitnessWatch > hm=new HashMap<String,FitnessWatch>();
+	try 
+	{
+		getConnection();
+		
+		String selectTablet="select * from  Productdetails where ProductType=?";
+		PreparedStatement pst = conn.prepareStatement(selectTablet);
+		pst.setString(1,"fitnesswatches");
+		ResultSet rs = pst.executeQuery();
+	
+		while(rs.next())
+		{	FitnessWatch tab = new FitnessWatch(rs.getString("Id"),rs.getString("productName"),rs.getDouble("productPrice"),rs.getString("productImage"),rs.getString("productManufacturer"),rs.getString("productCondition"),rs.getDouble("productDiscount"),rs.getInt("quantity"), rs.getString("rebate"));
+				hm.put(rs.getString("Id"), tab);
+				tab.setId(rs.getString("Id"));
+
+		}
+	}
+	catch(Exception e)
+	{
+	}
+	return hm;			
+}
+
+public static HashMap<String,Laptop> getLaptops()
+{	
+	HashMap<String,Laptop > hm=new HashMap<String,Laptop>();
+	try 
+	{
+		getConnection();
+		
+		String selectTablet="select * from  Productdetails where ProductType=?";
+		PreparedStatement pst = conn.prepareStatement(selectTablet);
+		pst.setString(1,"latops");
+		ResultSet rs = pst.executeQuery();
+	
+		while(rs.next())
+		{	
+			Laptop tab = new Laptop(rs.getString("productName"),rs.getDouble("productPrice"),rs.getString("productImage"),rs.getString("productManufacturer"),rs.getString("productCondition"),rs.getDouble("productDiscount"),rs.getInt("quantity"), rs.getString("rebate"));
+				hm.put(rs.getString("Id"), tab);
+				tab.setId(rs.getString("Id"));
+
+		}
+	}
+	catch(Exception e)
+	{
+	}
+	return hm;			
+}
+
+public static HashMap<String,Phone> getPhones()
+{	
+	HashMap<String,Phone > hm=new HashMap<String,Phone>();
+	try 
+	{
+		getConnection();
+		
+		String selectTablet="select * from  Productdetails where ProductType=?";
+		PreparedStatement pst = conn.prepareStatement(selectTablet);
+		pst.setString(1,"phones");
+		ResultSet rs = pst.executeQuery();
+	
+		while(rs.next())
+		{	Phone tab = new Phone(rs.getString("productName"),rs.getDouble("productPrice"),rs.getString("productImage"),rs.getString("productManufacturer"),rs.getString("productCondition"),rs.getDouble("productDiscount"),rs.getInt("quantity"), rs.getString("rebate"));
+				hm.put(rs.getString("Id"), tab);
+				tab.setId(rs.getString("Id"));
+
+		}
+	}
+	catch(Exception e)
+	{
+	}
+	return hm;			
+}
+
+
+public static HashMap<String,VoiceAssistant> getVoiceAssistants()
+{	
+	HashMap<String,VoiceAssistant > hm=new HashMap<String,VoiceAssistant>();
+	try 
+	{
+		getConnection();
+		
+		String selectTablet="select * from  Productdetails where ProductType=?";
+		PreparedStatement pst = conn.prepareStatement(selectTablet);
+		pst.setString(1,"voiceassistants");
+		ResultSet rs = pst.executeQuery();
+	
+		while(rs.next())
+		{	VoiceAssistant tab = new VoiceAssistant(rs.getString("Id"),rs.getString("productName"),rs.getDouble("productPrice"),rs.getString("productImage"),rs.getString("productManufacturer"),rs.getString("productCondition"),rs.getDouble("productDiscount"),rs.getInt("quantity"), rs.getString("rebate"));
+				hm.put(rs.getString("Id"), tab);
+				tab.setId(rs.getString("Id"));
+
+		}
+	}
+	catch(Exception e)
+	{
+	}
+	return hm;			
+}
+
+public static HashMap<String,SmartWatch> getSmartWatches()
+{	
+	HashMap<String,SmartWatch > hm=new HashMap<String,SmartWatch>();
+	try 
+	{
+		getConnection();
+		
+		String selectTablet="select * from  Productdetails where ProductType=?";
+		PreparedStatement pst = conn.prepareStatement(selectTablet);
+		pst.setString(1,"smartwatches");
+		ResultSet rs = pst.executeQuery();
+	
+		while(rs.next())
+		{	SmartWatch tab = new SmartWatch(rs.getString("Id"),rs.getString("productName"),rs.getDouble("productPrice"),rs.getString("productImage"),rs.getString("productManufacturer"),rs.getString("productCondition"),rs.getDouble("productDiscount"),rs.getInt("quantity"), rs.getString("rebate"));
+				hm.put(rs.getString("Id"), tab);
+				tab.setId(rs.getString("Id"));
+
+		}
+	}
+	catch(Exception e)
+	{
+	}
+	return hm;			
+}
+
+public static HashMap<String,Headphone> getHeadPhones()
+{	
+	HashMap<String,Headphone > hm=new HashMap<String,Headphone>();
+	try 
+	{
+		getConnection();
+		
+		String selectTablet="select * from  Productdetails where ProductType=?";
+		PreparedStatement pst = conn.prepareStatement(selectTablet);
+		pst.setString(1,"headphones");
+		ResultSet rs = pst.executeQuery();
+	
+		while(rs.next())
+		{	Headphone tab = new Headphone(rs.getString("productName"),rs.getDouble("productPrice"),rs.getString("productImage"),rs.getString("productManufacturer"),rs.getString("productCondition"),rs.getDouble("productDiscount"),rs.getInt("quantity"), rs.getString("rebate"));
+				hm.put(rs.getString("Id"), tab);
+				tab.setId(rs.getString("Id"));
+
+		}
+	}
+	catch(Exception e)
+	{
+	}
+	return hm;			
+}
+
+public static HashMap<String,Wirelessplan> getWirelessPlans()
+{	
+	HashMap<String,Wirelessplan > hm=new HashMap<String,Wirelessplan>();
+	try 
+	{
+		getConnection();
+		
+		String selectTablet="select * from  Productdetails where ProductType=?";
+		PreparedStatement pst = conn.prepareStatement(selectTablet);
+		pst.setString(1,"wirelessplans");
+		ResultSet rs = pst.executeQuery();
+	
+		while(rs.next())
+		{	Wirelessplan tab = new Wirelessplan(rs.getString("Id"),rs.getString("productName"),rs.getDouble("productPrice"),rs.getString("productImage"),rs.getString("productManufacturer"),rs.getString("productCondition"),rs.getDouble("productDiscount"),rs.getInt("quantity"), rs.getString("rebate"));
+				hm.put(rs.getString("Id"), tab);
+				tab.setId(rs.getString("Id"));
+
+		}
+	}
+	catch(Exception e)
+	{
+	}
+	return hm;			
+}
+
 
 public static HashMap<String,Accessory> getAccessories()
 {	
@@ -338,7 +527,7 @@ public static HashMap<String,Accessory> getAccessories()
 		ResultSet rs = pst.executeQuery();
 	
 		while(rs.next())
-		{	Accessory acc = new Accessory(rs.getString("productName"),rs.getDouble("productPrice"),rs.getString("productImage"),rs.getString("productManufacturer"),rs.getString("productCondition"),rs.getDouble("productDiscount"));
+		{	Accessory acc = new Accessory(rs.getString("productName"),rs.getDouble("productPrice"),rs.getString("productImage"),rs.getString("productManufacturer"),rs.getString("productCondition"),rs.getDouble("productDiscount"),rs.getInt("quantity"), rs.getString("rebate"));
 				hm.put(rs.getString("Id"), acc);
 				acc.setId(rs.getString("Id"));
 
@@ -349,14 +538,14 @@ public static HashMap<String,Accessory> getAccessories()
 	}
 	return hm;			
 }
-public static String addproducts(String producttype,String productId,String productName,double productPrice,String productImage,String productManufacturer,String productCondition,double productDiscount,String prod)
+public static String addproducts(String producttype,String productId,String productName,double productPrice,String productImage,String productManufacturer,String productCondition,double productDiscount,int quantity, String rebate,String prod)
 {
 	String msg = "Product is added successfully";
 	try{
 		
 		getConnection();
-		String addProductQurey = "INSERT INTO  Productdetails(ProductType,Id,productName,productPrice,productImage,productManufacturer,productCondition,productDiscount)" +
-		"VALUES (?,?,?,?,?,?,?,?);";
+		String addProductQurey = "INSERT INTO  Productdetails(ProductType,Id,productName,productPrice,productImage,productManufacturer,productCondition,productDiscount,quantity,rebate)" +
+		"VALUES (?,?,?,?,?,?,?,?,?,?);";
 		   
 			String name = producttype;
 	        			
@@ -369,7 +558,8 @@ public static String addproducts(String producttype,String productId,String prod
 			pst.setString(6,productManufacturer);
 			pst.setString(7,productCondition);
 			pst.setDouble(8,productDiscount);
-			
+			pst.setInt(9,quantity);
+			pst.setString(10,rebate);
 			pst.executeUpdate();
 			try{
 				if (!prod.isEmpty())
@@ -400,13 +590,13 @@ public static String addproducts(String producttype,String productId,String prod
 	}
 	return msg;
 }
-public static String updateproducts(String producttype,String productId,String productName,double productPrice,String productImage,String productManufacturer,String productCondition,double productDiscount)
+public static String updateproducts(String producttype,String productId,String productName,double productPrice,String productImage,String productManufacturer,String productCondition,double productDiscount, int quantity, String rebate)
 { 
     String msg = "Product is updated successfully";
 	try{
 		
 		getConnection();
-		String updateProductQurey = "UPDATE Productdetails SET productName=?,productPrice=?,productImage=?,productManufacturer=?,productCondition=?,productDiscount=? where Id =?;" ;
+		String updateProductQurey = "UPDATE Productdetails SET productName=?,productPrice=?,productImage=?,productManufacturer=?,productCondition=?,productDiscount=?,quantity=?,rebate=? where Id =?;" ;
 		
 		   
 				        			
@@ -419,6 +609,8 @@ public static String updateproducts(String producttype,String productId,String p
 			pst.setString(5,productCondition);
 			pst.setDouble(6,productDiscount);
 			pst.setString(7,productId);
+			pst.setInt(8,quantity);
+			pst.setString(9,rebate);
 			pst.executeUpdate();
 			
 			
@@ -490,6 +682,11 @@ public static void insertOrder(int orderId,String userName,String orderName,doub
 		
 
 		pst.execute();
+
+		String anotherQuery = "update productdetails  SET quantity = quantity - 1 WHERE productName=?";
+		PreparedStatement pst1 = conn.prepareStatement(anotherQuery);
+		pst1.setString(1,orderName);
+		pst1.execute();
 	}
 	catch(Exception e)
 	{
@@ -601,6 +798,54 @@ public static ArrayList<String> getAllProducts(){
 
 }
 
+public static HashMap<String,List<String>> getSaleCount(){
+
+	HashMap<String,List<String>> hm=new HashMap<String,List<String>>();
+	try 
+	{
+		getConnection();
+		Statement stmt=conn.createStatement();
+		String selectCustomerQuery="select c.orderName,p.productPrice ,count(c.OrderID) count, c.OrderID*productPrice sales from customerorders c, productdetails p where c.orderName = p.productName group by c.orderName;";
+		ResultSet rs = stmt.executeQuery(selectCustomerQuery);
+		while(rs.next())
+		{	
+			List<String> a = new ArrayList<String>();
+			a.add(rs.getString("p.productPrice"));
+			a.add(rs.getString("count"));
+			a.add(rs.getString("sales"));
+			hm.put(rs.getString("c.orderName"),a);
+		}
+	}
+	catch(Exception e)
+	{
+	}
+	return hm;
+
+}
+
+
+public static HashMap<String,List<String>> getDateSaleCount(){
+
+	HashMap<String,List<String>> hm=new HashMap<String,List<String>>();
+	try 
+	{
+		getConnection();
+		Statement stmt=conn.createStatement();
+		String selectCustomerQuery="select c.deliverydate, c.OrderID*productPrice sales from customerorders c, productdetails p where c.orderName = p.productName group by c.deliverydate;";
+		ResultSet rs = stmt.executeQuery(selectCustomerQuery);
+		while(rs.next())
+		{	
+			List<String> a = new ArrayList<String>();
+			a.add(rs.getString("sales"));
+			hm.put(rs.getString("c.deliverydate"),a);
+		}
+	}
+	catch(Exception e)
+	{
+	}
+	return hm;
+
+}
 
 
 	

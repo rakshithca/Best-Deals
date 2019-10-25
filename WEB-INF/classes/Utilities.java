@@ -58,7 +58,22 @@ public class Utilities extends HttpServlet{
 				if(session.getAttribute("usertype").equals("retailer"))
 				{
 					result = result +"<li><a href='DataVisualization'><span class='glyphicon'>DataVisualization</span></a></li>"
-						+"<li><a href='DataAnalytics'><span class='glyphicon'>DataAnalytics</span></a></li>";
+						+"<li><a href='DataAnalytics'><span class='glyphicon'>DataAnalytics</span></a></li>"
+						+"<li><div class='dropdown show' >"
+						+"<a href='#' class='btn btn-secondary dropdown-toggle' role='button' id='dropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' >"
+						+"<span class='glyphicon'>Inventory</span></a><div class='dropdown-menu' aria-labelledby='dropdownMenuLink' style='margin-top: 3em;width: 16em;'>"
+						+"<a class='dropdown-item' href='inventory' style='color:#337ab7;'>Product Inventory</a>"
+						+"<a class='dropdown-item' href='inventorybar' style='color:#337ab7;'>Bar Report</a>"
+						+"<a class='dropdown-item' href='inventory?sale=sale' style='color:#337ab7;'>Products on Sale</a>"
+						+"<a class='dropdown-item' href='inventory?rebate=yes' style='color:#337ab7;'>Products with Rebate Amount</a>"
+						+"</div></div></li>"
+						+"<li><div class='dropdown show'>"
+						+"<a href='#' class='btn btn-secondary dropdown-toggle' role='button' id='dropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' >"
+						+"<span class='glyphicon'>Sales</span></a><div class='dropdown-menu' aria-labelledby='dropdownMenuLink' style='margin-top: 3em;'>"
+						+"<a class='dropdown-item' href='sales' style='color:#337ab7;'>Total Sales Report</a>"
+						+"<a class='dropdown-item' href='salesgraph' style='color:#337ab7;'>Sales Graph Report </a>"
+						+"<a class='dropdown-item' href='salesdaily' style='color:#337ab7;'>Daily Sales Report</a>"
+					    +"</div></div></li>";
 						
 				}
 				result = result + "<li><a href='ViewOrder'><span class='glyphicon'>ViewOrder</span></a></li>"

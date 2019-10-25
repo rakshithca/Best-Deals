@@ -69,7 +69,14 @@ public class deleteproduct extends HttpServlet {
                             SaxParserDataStore.headphones.remove(product_id);
                             break;
             }
-            pw.print("<script>var r = confirm('Product is deleted successfully');if(r==true || r==false){window.location.href ='Home';}</script>");
+            try{
+                MySqlDataStoreUtilities.deleteproducts(product_id);
+                pw.print("<script>var r = confirm('Product is deleted successfully');if(r==true || r==false){window.location.href ='Home';}</script>");
+            } catch(Exception e){
+                pw.print("<script>var r = confirm('Product is not deleted');if(r==true || r==false){window.location.href ='Home';}</script>");
+            }
+           
+            
         }
 		
 	}

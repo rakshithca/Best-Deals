@@ -10,6 +10,8 @@
         <manufacturer>LG</manufacturer>
         <condition>New</condition>
         <discount>10.0</discount>
+        <quantity>50</quantity>
+        <rebate>Yes</rebate>
         <accessories>
             <accessory>xboxone_wc</accessory>
             <accessory>xboxone_sh</accessory>
@@ -29,6 +31,8 @@
         <manufacturer>LG</manufacturer>
         <condition>New</condition>
         <discount>10.0</discount>
+        <quantity>10</quantity>
+        <rebate>No</rebate>
         <accessories>
             <accessory>xbox360_wc</accessory>
             <accessory>xbox360_sh</accessory>
@@ -46,6 +50,8 @@
         <manufacturer>Sony</manufacturer>
         <condition>New</condition>
         <discount>10.0</discount>
+        <quantity>25</quantity>
+        <rebate>Yes</rebate>
         <accessories>
             <accessory>ps4_wc</accessory>
 			
@@ -58,6 +64,8 @@
         <manufacturer>Sony</manufacturer>
         <condition>New</condition>
         <discount>10.0</discount>
+        <quantity>30</quantity>
+        <rebate>Yes</rebate>
         <accessories>
             <accessory>ps3_wc</accessory>
 			
@@ -70,6 +78,8 @@
         <manufacturer>samsung</manufacturer>
         <condition>New</condition>
         <discount>10.0</discount>
+        <quantity>5</quantity>
+        <rebate>No</rebate>
         <accessories>
             <accessory>samsung_wc</accessory>
             <accessory>samsung_sh</accessory>
@@ -85,6 +95,8 @@
         <manufacturer>Apple</manufacturer>
         <condition>New</condition>
         <discount>40.0</discount>
+        <quantity>10</quantity>
+        <rebate>Yes</rebate>
     </phone>
     <phone id="ipad3.1">
         <name>Apple IPhone 10</name>
@@ -93,6 +105,8 @@
         <manufacturer>Apple</manufacturer>
         <condition>Used</condition>
         <discount>20.0</discount>
+         <quantity>120</quantity>
+        <rebate>No</rebate>
     </phone>
     <phone id="Surface33">
         <name>V10</name>
@@ -101,6 +115,8 @@
         <manufacturer>LG</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+         <quantity>90</quantity>
+        <rebate>Yes</rebate>
     </phone>
     <phone id="Surface4.11">
         <name>G5</name>
@@ -109,6 +125,8 @@
         <manufacturer>LG</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+         <quantity>80</quantity>
+        <rebate>No</rebate>
     </phone>
     <phone id="Samsung2.1">
         <name>Galaxy S10</name>
@@ -117,6 +135,8 @@
         <manufacturer>Samsung</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+         <quantity>200</quantity>
+        <rebate>Yes</rebate>
     </phone>
 
 </PhoneCatalog>
@@ -129,6 +149,8 @@
         <manufacturer>Bose</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+         <quantity>10</quantity>
+        <rebate>Yes</rebate>
 </soundsystem>
 <soundsystem id="g2.2">
         <name>Revolve</name>
@@ -137,6 +159,8 @@
         <manufacturer>Bose</manufacturer>
         <condition>Refurbished</condition>
         <discount>15.0</discount>
+         <quantity>3</quantity>
+        <rebate>No</rebate>
 </soundsystem>
 <soundsystem id="g3.1">
         <name>StockWell</name>
@@ -145,6 +169,8 @@
         <manufacturer>Marshall</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+         <quantity>12</quantity>
+        <rebate>Yes</rebate>
 </soundsystem>
 <soundsystem id="g5.9">
         <name>Stanmore</name>
@@ -153,6 +179,8 @@
         <manufacturer>Marshall</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+         <quantity>3</quantity>
+        <rebate>No</rebate>
 </soundsystem>
 <soundsystem id="g4.1">
         <name>DXR10</name>
@@ -161,6 +189,8 @@
         <manufacturer>Yamaha</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+         <quantity>15</quantity>
+        <rebate>Yes</rebate>
 </soundsystem>
 </SoundSystemsCatalog>
 <!--********************************************************************************************-->
@@ -172,6 +202,8 @@
         <manufacturer>Apple</manufacturer>
         <condition>New</condition>
         <discount>40.0</discount>
+         <quantity>150</quantity>
+        <rebate>Yes</rebate>
     </laptop>
     <laptop id="ipad3.2">
         <name>Apple MacBook Air</name>
@@ -180,6 +212,8 @@
         <manufacturer>Apple</manufacturer>
         <condition>Used</condition>
         <discount>20.0</discount>
+         <quantity>540</quantity>
+        <rebate>No</rebate>
     </laptop>
     <laptop id="Surface11">
         <name>Gram Thin</name>
@@ -188,6 +222,8 @@
         <manufacturer>LG</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+         <quantity>250</quantity>
+        <rebate>No</rebate>
     </laptop>
     <laptop id="Surface4.12">
         <name>Gram Pro</name>
@@ -196,6 +232,8 @@
         <manufacturer>LG</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+         <quantity>550</quantity>
+        <rebate>Yes</rebate>
     </laptop>
     <laptop id="Samsung2.2">
         <name>NoteBook Pro</name>
@@ -204,6 +242,8 @@
         <manufacturer>Samsung</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+         <quantity>156</quantity>
+        <rebate>Yes</rebate>
     </laptop>
 
 </LaptopCatalog>
@@ -216,6 +256,8 @@
         <manufacturer>Google</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+         <quantity>87</quantity>
+        <rebate>No</rebate>
 </voiceassistant>
 <voiceassistant id="g2.3">
         <name>Mini</name>
@@ -224,6 +266,8 @@
         <manufacturer>Google</manufacturer>
         <condition>Refurbished</condition>
         <discount>15.0</discount>
+         <quantity>112</quantity>
+        <rebate>Yes</rebate>
 </voiceassistant>
 <voiceassistant id="g3.2">
         <name>Alexa</name>
@@ -232,6 +276,8 @@
         <manufacturer>Samsung</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+         <quantity>50</quantity>
+        <rebate>No</rebate>
 </voiceassistant>
 <voiceassistant id="g5.1">
         <name>Bigsby</name>
@@ -240,6 +286,8 @@
         <manufacturer>Samsung</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+         <quantity>232</quantity>
+        <rebate>Yes</rebate>
 </voiceassistant>
 <voiceassistant id="g4.2">
         <name>Cortana</name>
@@ -248,6 +296,8 @@
         <manufacturer>Microsoft</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+         <quantity>121</quantity>
+        <rebate>No</rebate>
 </voiceassistant>
 </VoiceAssistantCatalog>
 <!--******************************************************************************************************-->
@@ -259,6 +309,8 @@
         <manufacturer>Fitbit</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+         <quantity>343</quantity>
+        <rebate>Yes</rebate>
 </fitnesswatch>
 <fitnesswatch id="g2.4">
         <name>Charge 3</name>
@@ -267,6 +319,8 @@
         <manufacturer>Fitbit</manufacturer>
         <condition>Refurbished</condition>
         <discount>15.0</discount>
+         <quantity>12</quantity>
+        <rebate>No</rebate>
 </fitnesswatch>
 <fitnesswatch id="g3.3">
         <name>Apple Watch 3 LTE</name>
@@ -275,6 +329,8 @@
         <manufacturer>Apple</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+         <quantity>22</quantity>
+        <rebate>Yes</rebate>
 </fitnesswatch>
 <fitnesswatch id="g5">
         <name>Apple Watch 3</name>
@@ -283,6 +339,8 @@
         <manufacturer>Apple</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+         <quantity>112</quantity>
+        <rebate>No</rebate>
 </fitnesswatch>
 <fitnesswatch id="g4.3">
         <name>Forerunner</name>
@@ -291,6 +349,8 @@
         <manufacturer>Garmin</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+         <quantity>111</quantity>
+        <rebate>Yes</rebate>
 </fitnesswatch>
 </FitnessWatchCatalog>
 
@@ -304,6 +364,8 @@
         <manufacturer>Fossil</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+         <quantity>12</quantity>
+        <rebate>Yes</rebate>
 </smartwatch>
 <smartwatch id="g2.1">
         <name>Gen 3</name>
@@ -312,6 +374,8 @@
         <manufacturer>Fossil</manufacturer>
         <condition>Refurbished</condition>
         <discount>15.0</discount>
+         <quantity>50</quantity>
+        <rebate>No</rebate>
 </smartwatch>
 <smartwatch id="g5.3">
         <name>Versa 2</name>
@@ -320,6 +384,8 @@
         <manufacturer>Fitbit</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+         <quantity>150</quantity>
+        <rebate>Yes</rebate>
 </smartwatch>
 <smartwatch id="g3.4">
         <name>Smart Ionic</name>
@@ -328,6 +394,8 @@
         <manufacturer>Fitbit</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+        <quantity>50</quantity>
+        <rebate>No</rebate>
 </smartwatch>
 <smartwatch id="g4.4">
         <name>Apple Watch 3 WiFi</name>
@@ -336,6 +404,8 @@
         <manufacturer>Apple</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+        <quantity>150</quantity>
+        <rebate>No</rebate>
 </smartwatch>
 </SmartWatchCatalog>
 <!--****************************************************************************************-->
@@ -347,6 +417,8 @@
         <manufacturer>Beats</manufacturer>
         <condition>New</condition>
         <discount>40.0</discount>
+        <quantity>123</quantity>
+        <rebate>Yes</rebate>
     </headphone>
     <headphone id="ipad3.3">
         <name>Solo 2</name>
@@ -355,6 +427,8 @@
         <manufacturer>Beats</manufacturer>
         <condition>Used</condition>
         <discount>20.0</discount>
+        <quantity>122</quantity>
+        <rebate>Yes</rebate>
     </headphone>
     <headphone id="Surface22">
         <name>HD450</name>
@@ -363,6 +437,8 @@
         <manufacturer>Sennheiser</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+        <quantity>11</quantity>
+        <rebate>No</rebate>
     </headphone>
     <headphone id="Surface4.13">
         <name>Pro280</name>
@@ -371,6 +447,8 @@
         <manufacturer>Sennheiser</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+        <quantity>88</quantity>
+        <rebate>No</rebate>
     </headphone>
     <headphone id="Samsung2">
         <name>ANC1000</name>
@@ -379,6 +457,8 @@
         <manufacturer>Mpow</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+        <quantity>12</quantity>
+        <rebate>Yes</rebate>
     </headphone>
 
 </HeadphoneCatalog>
@@ -392,6 +472,8 @@
         <manufacturer>Basic</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+         <quantity>240</quantity>
+        <rebate>Yes</rebate>
 </wirelessplan>
 <wirelessplan id="g3.422">
         <name>Premium:Added Music and Video</name>
@@ -400,6 +482,8 @@
         <manufacturer>Premium</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+         <quantity>222</quantity>
+        <rebate>Yes</rebate>
 </wirelessplan>
 <wirelessplan id="g4.5">
         <name>Ultimate: Speed in Peak Hours</name>
@@ -408,6 +492,8 @@
         <manufacturer>Ultimate</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+         <quantity>121</quantity>
+        <rebate>Yes</rebate>
 </wirelessplan>
 </WirelessplansCatalog>
 
@@ -422,6 +508,8 @@
         <manufacturer>LG</manufacturer>
         <condition>New</condition>
         <discount>40.0</discount>
+        <quantity>13</quantity>
+        <rebate>Yes</rebate>
      </accessory>
 
     <accessory id="xboxone_sh">
@@ -431,6 +519,8 @@
         <manufacturer>LG</manufacturer>
         <condition>New</condition>
         <discount>40.0</discount>
+         <quantity>12</quantity>
+        <rebate>Yes</rebate>
      </accessory>
 	 
 	 <accessory id="xboxone_vb">
@@ -440,6 +530,8 @@
         <manufacturer>LG</manufacturer>
         <condition>New</condition>
         <discount>40.0</discount>
+         <quantity>12</quantity>
+        <rebate>Yes</rebate>
      </accessory>
 
     <accessory id="xboxone_kg">
@@ -449,6 +541,8 @@
         <manufacturer>LG</manufacturer>
         <condition>New</condition>
         <discount>40.0</discount>
+         <quantity>12</quantity>
+        <rebate>Yes</rebate>
      </accessory>
 	 
 	 <accessory id="xboxone_rs">
@@ -458,6 +552,8 @@
         <manufacturer>LG</manufacturer>
         <condition>New</condition>
         <discount>40.0</discount>
+         <quantity>12</quantity>
+        <rebate>Yes</rebate>
      </accessory>
 
     <accessory id="xboxone_mp">
@@ -467,6 +563,8 @@
         <manufacturer>LG</manufacturer>
         <condition>New</condition>
         <discount>40.0</discount>
+         <quantity>12</quantity>
+        <rebate>Yes</rebate>
      </accessory>
 	 
 	 <accessory id="xboxone_mc">
@@ -476,6 +574,8 @@
         <manufacturer>LG</manufacturer>
         <condition>New</condition>
         <discount>40.0</discount>
+         <quantity>12</quantity>
+        <rebate>Yes</rebate>
      </accessory>
 	 
 
@@ -486,6 +586,8 @@
         <manufacturer>LG</manufacturer>
         <condition>New</condition>
         <discount>40.0</discount>
+         <quantity>12</quantity>
+        <rebate>Yes</rebate>
      </accessory>
 
     <accessory id="xbox360_sh">
@@ -495,6 +597,8 @@
         <manufacturer>LG</manufacturer>
         <condition>New</condition>
         <discount>40.0</discount>
+         <quantity>12</quantity>
+        <rebate>Yes</rebate>
      </accessory>
 	 
 	 <accessory id="xbox360_vb">
@@ -504,6 +608,8 @@
         <manufacturer>LG</manufacturer>
         <condition>New</condition>
         <discount>40.0</discount>
+         <quantity>12</quantity>
+        <rebate>Yes</rebate>
      </accessory>
 	 	 <accessory id="xbox360_rs">
         <name>messengerkit</name>
@@ -512,6 +618,8 @@
         <manufacturer>LG</manufacturer>
         <condition>New</condition>
         <discount>40.0</discount>
+         <quantity>12</quantity>
+        <rebate>Yes</rebate>
      </accessory>
 	 
 	 	 <accessory id="xbox360_mp">
@@ -521,6 +629,8 @@
         <manufacturer>LG</manufacturer>
         <condition>New</condition>
         <discount>40.0</discount>
+         <quantity>12</quantity>
+        <rebate>Yes</rebate>
      </accessory>
 	 
 	 	 <accessory id="xbox360_kg">
@@ -530,6 +640,8 @@
         <manufacturer>LG</manufacturer>
         <condition>New</condition>
         <discount>40.0</discount>
+         <quantity>12</quantity>
+        <rebate>Yes</rebate>
      </accessory>
 
     <accessory id="ps4_wc">
@@ -539,6 +651,8 @@
         <manufacturer>Sony</manufacturer>
         <condition>New</condition>
         <discount>40.0</discount>
+         <quantity>12</quantity>
+        <rebate>Yes</rebate>
      </accessory>
 
     <accessory id="ps3_wc">
@@ -548,6 +662,8 @@
         <manufacturer>Sony</manufacturer>
         <condition>New</condition>
         <discount>40.0</discount>
+         <quantity>12</quantity>
+        <rebate>Yes</rebate>
      </accessory>
 
     <accessory id="samsung_wc">
@@ -557,6 +673,8 @@
         <manufacturer>Samsung</manufacturer>
         <condition>New</condition>
         <discount>40.0</discount>
+         <quantity>12</quantity>
+        <rebate>Yes</rebate>
      </accessory>
 
     <accessory id="samsung_sh">
@@ -566,6 +684,8 @@
         <manufacturer>Samsung</manufacturer>
         <condition>New</condition>
         <discount>40.0</discount>
+         <quantity>12</quantity>
+        <rebate>Yes</rebate>
      </accessory>
 	 
   

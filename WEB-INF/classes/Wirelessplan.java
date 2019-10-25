@@ -23,8 +23,9 @@ public class Wirelessplan extends HttpServlet{
 	private String retailer;
 	private String condition;
 	private double discount;
-	
-	public Wirelessplan(String id,String name, double price, String image, String retailer,String condition,double discount){
+	private int qunatity;
+	private String rebate;
+	public Wirelessplan(String id,String name, double price, String image, String retailer,String condition,double discount,int qunatity, String rebate){
 		this.id=id;
 		this.name=name;
 		this.price=price;
@@ -32,6 +33,8 @@ public class Wirelessplan extends HttpServlet{
 		this.condition=condition;
 		this.discount = discount;
 		this.retailer = retailer;
+		this.qunatity = qunatity;
+		this.rebate = rebate;
 	}
 	
 	public Wirelessplan(){
@@ -85,5 +88,23 @@ public class Wirelessplan extends HttpServlet{
 	public void setDiscount(double discount) {
 		this.discount = discount;
 	}
+
+	public int getQuantity() {
+		return qunatity;
+	}
+
+	public void setQuantity(int qunatity) {
+		this.qunatity = qunatity;
+	}
+
+
+	public String getRebate() {
+		return rebate;
+	}
+
+	public void setRebate(String rebate) {
+		this.rebate = rebate;
+	}
+
 	
 }

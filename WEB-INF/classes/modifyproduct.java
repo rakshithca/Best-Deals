@@ -27,7 +27,6 @@ public class modifyproduct extends HttpServlet {
 
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-				
 		try{			
 			String product_id = request.getParameter("product_id");
 			String product_name = request.getParameter("product_name");
@@ -35,10 +34,14 @@ public class modifyproduct extends HttpServlet {
 			Double price_amt = Double.parseDouble(request.getParameter("price_amt"));	
 			Double discount_amt = Double.parseDouble(request.getParameter("discount_amt"));
 			String condition_prod = "new";
+			String image = request.getParameter("image");
 			String manufacturer_prod = request.getParameter("manufacturer_prod");	
-            String display_under = request.getParameter("display_under");	
-            String image = request.getParameter("image");	
-			if (display_under.equalsIgnoreCase("TV")) 
+			String display_under = request.getParameter("display_under");			
+			int quantity = Integer.parseInt(request.getParameter("quantity"));	
+			String rebate = request.getParameter("rebate");	
+
+
+			if (display_under.equalsIgnoreCase("TVs")) 
 			{
 				TV = new TV();
 				TV.setId(product_id);
@@ -47,10 +50,12 @@ public class modifyproduct extends HttpServlet {
 				TV.setRetailer(manufacturer_prod);
 				TV.setName(product_name);
 				TV.setPrice(price_amt);
-				TV.setImage(image);
+				TV.setImage("new.jpg");
+				TV.setQuantity(quantity);
+				TV.setRebate(rebate);
 				SaxParserDataStore.TVs.put(TV.getId(),TV);
 			}
-			if (display_under.equalsIgnoreCase("phone"))
+			if (display_under.equalsIgnoreCase("phones"))
 			{
 				phone = new Phone();
 				phone.setId(product_id);
@@ -59,10 +64,12 @@ public class modifyproduct extends HttpServlet {
 				phone.setRetailer(manufacturer_prod);
 				phone.setName(product_name);
 				phone.setPrice(price_amt);
-				phone.setImage(image);
+				phone.setImage("new.jpg");
+				phone.setQuantity(quantity);
+				phone.setRebate(rebate);
 				SaxParserDataStore.phones.put(phone.getId(),phone);
 			}
-			if (display_under.equalsIgnoreCase("soundsystem"))
+			if (display_under.equalsIgnoreCase("soundsystems"))
 			{
 				soundsystem= new SoundSystem();
 				soundsystem.setId(product_id);
@@ -71,10 +78,12 @@ public class modifyproduct extends HttpServlet {
 				soundsystem.setRetailer(manufacturer_prod);
 				soundsystem.setName(product_name);
 				soundsystem.setPrice(price_amt);
-				soundsystem.setImage(image);
+				soundsystem.setImage("new.jpg");
+				soundsystem.setQuantity(quantity);
+				soundsystem.setRebate(rebate);
 				SaxParserDataStore.soundsystems.put(soundsystem.getId(),soundsystem);
 			}
-			if (display_under.equalsIgnoreCase("laptop"))
+			if (display_under.equalsIgnoreCase("laptops"))
 			{
 				
 				laptop= new Laptop();
@@ -84,11 +93,13 @@ public class modifyproduct extends HttpServlet {
 				laptop.setRetailer(manufacturer_prod);
 				laptop.setName(product_name);
 				laptop.setPrice(price_amt);
-				laptop.setImage(image);
+				laptop.setImage("new.jpg");
+				laptop.setQuantity(quantity);
+				laptop.setRebate(rebate);
 				SaxParserDataStore.laptops.put(laptop.getId(),laptop);
 			}
 	
-			if (display_under.equalsIgnoreCase("voiceassistant"))
+			if (display_under.equalsIgnoreCase("voiceassistants"))
 			{
 				
 				voiceassistant= new VoiceAssistant();
@@ -98,11 +109,13 @@ public class modifyproduct extends HttpServlet {
 				voiceassistant.setRetailer(manufacturer_prod);
 				voiceassistant.setName(product_name);
 				voiceassistant.setPrice(price_amt);
-				voiceassistant.setImage(image);
+				voiceassistant.setImage("new.jpg");
+				voiceassistant.setQuantity(quantity);
+				voiceassistant.setRebate(rebate);
 				SaxParserDataStore.voiceassistants.put(voiceassistant.getId(),voiceassistant);
 			}
 	
-			if (display_under.equalsIgnoreCase("fitnesswatch"))
+			if (display_under.equalsIgnoreCase("fitnesswatches"))
 			{
 				
 				fitnesswatch= new FitnessWatch();
@@ -112,12 +125,14 @@ public class modifyproduct extends HttpServlet {
 				fitnesswatch.setRetailer(manufacturer_prod);
 				fitnesswatch.setName(product_name);
 				fitnesswatch.setPrice(price_amt);
-				fitnesswatch.setImage(image);
+				fitnesswatch.setImage("new.jpg");
+				fitnesswatch.setQuantity(quantity);
+				fitnesswatch.setRebate(rebate);
 				SaxParserDataStore.fitnesswatches.put(fitnesswatch.getId(),fitnesswatch);
 			}
 			
 	
-			if (display_under.equalsIgnoreCase("smartwatch"))
+			if (display_under.equalsIgnoreCase("smartwatches"))
 			{
 				//currentElement="smartwatch";
 				smartwatch= new SmartWatch();
@@ -127,11 +142,13 @@ public class modifyproduct extends HttpServlet {
 				smartwatch.setRetailer(manufacturer_prod);
 				smartwatch.setName(product_name);
 				smartwatch.setPrice(price_amt);
-				smartwatch.setImage(image);
+				smartwatch.setImage("new.jpg");
+				smartwatch.setQuantity(quantity);
+				smartwatch.setRebate(rebate);
 				SaxParserDataStore.smartwatches.put(smartwatch.getId(),smartwatch);
 			}
 	
-			if (display_under.equalsIgnoreCase("headphone"))
+			if (display_under.equalsIgnoreCase("headphones"))
 			{
 				//currentElement="headphone";
 				headphone = new Headphone();
@@ -141,11 +158,13 @@ public class modifyproduct extends HttpServlet {
 				headphone.setRetailer(manufacturer_prod);
 				headphone.setName(product_name);
 				headphone.setPrice(price_amt);
-				headphone.setImage(image);
+				headphone.setImage("new.jpg");
+				headphone.setQuantity(quantity);
+				headphone.setRebate(rebate);
 				SaxParserDataStore.headphones.put(headphone.getId(),headphone);
 			}
 			
-			if (display_under.equalsIgnoreCase("wirelessplan"))
+			if (display_under.equalsIgnoreCase("wirelessplans"))
 			{
 				//currentElement="wirelessplan";
 				wirelessplan= new Wirelessplan();
@@ -155,11 +174,19 @@ public class modifyproduct extends HttpServlet {
 				wirelessplan.setRetailer(manufacturer_prod);
 				wirelessplan.setName(product_name);
 				wirelessplan.setPrice(price_amt);
-				wirelessplan.setImage(image);
+				wirelessplan.setImage("new.jpg");
+				wirelessplan.setQuantity(quantity);
+				wirelessplan.setRebate(rebate);
 				SaxParserDataStore.wirelessplans.put(wirelessplan.getId(),wirelessplan);
 			}
 			PrintWriter pw = response.getWriter();
-            pw.print("<script>var r = confirm('Product is modified successfully');if(r==true || r==false){window.location.href ='Home';}</script>");
+			try{
+				MySqlDataStoreUtilities.updateproducts( display_under, product_id, product_name, price_amt, "new.jpg", manufacturer_prod, condition_prod, discount_amt, quantity,  rebate);
+				pw.print("<script>var r = confirm('Product is modified successfully');if(r==true || r==false){window.location.href ='Home';}</script>");
+			
+			} catch(Exception e){
+				pw.print("<script>var r = confirm('Product is not modified successfully');if(r==true || r==false){window.location.href ='Home';}</script>");
+			}
 			response.sendRedirect("Home"); 
 			return;
 			
@@ -180,7 +207,9 @@ public class modifyproduct extends HttpServlet {
         Double price_amt =0.0;	
         Double discount_amt = 0.0;
         String condition_prod = "new";
-        String image = "";
+		String image = "";
+		int quantity = 0;
+		String rebate = "";
         PrintWriter pw = response.getWriter();
 		Utilities utility = new Utilities(request, pw);
         if(!utility.isLoggedin())
@@ -205,7 +234,9 @@ public class modifyproduct extends HttpServlet {
                                     discount_amt = entry.getValue().getDiscount();
                                     condition_prod = entry.getValue().getCondition();
                                     price_amt = entry.getValue().getPrice();
-                                    image=entry.getValue().getImage();
+									image=entry.getValue().getImage();
+									quantity = entry.getValue().getQuantity();
+									rebate = entry.getValue().getRebate();
                                 }
                                 
                             }
@@ -219,7 +250,9 @@ public class modifyproduct extends HttpServlet {
                                     discount_amt = entry.getValue().getDiscount();
                                     condition_prod = entry.getValue().getCondition();
                                     price_amt = entry.getValue().getPrice();
-                                    image=entry.getValue().getImage();
+									image=entry.getValue().getImage();
+									quantity = entry.getValue().getQuantity();
+									rebate = entry.getValue().getRebate();
                                 }
                             }
                             SaxParserDataStore.fitnesswatches.remove(product_id);
@@ -232,7 +265,9 @@ public class modifyproduct extends HttpServlet {
                                     discount_amt = entry.getValue().getDiscount();
                                     condition_prod = entry.getValue().getCondition();
                                     price_amt = entry.getValue().getPrice();
-                                    image=entry.getValue().getImage();
+									image=entry.getValue().getImage();
+									quantity = entry.getValue().getQuantity();
+									rebate = entry.getValue().getRebate();
                                 }
                             }
                             SaxParserDataStore.smartwatches.remove(product_id);
@@ -247,7 +282,9 @@ public class modifyproduct extends HttpServlet {
                                     discount_amt = entry.getValue().getDiscount();
                                     condition_prod = entry.getValue().getCondition();
                                     price_amt = entry.getValue().getPrice();
-                                    image=entry.getValue().getImage();
+									image=entry.getValue().getImage();
+									quantity = entry.getValue().getQuantity();
+									rebate = entry.getValue().getRebate();
                                 }
                             }
                             SaxParserDataStore.headphones.remove(product_id);
@@ -261,7 +298,9 @@ public class modifyproduct extends HttpServlet {
                                     discount_amt = entry.getValue().getDiscount();
                                     condition_prod = entry.getValue().getCondition();
                                     price_amt = entry.getValue().getPrice();
-                                    image=entry.getValue().getImage();
+									image=entry.getValue().getImage();
+									quantity = entry.getValue().getQuantity();
+									rebate = entry.getValue().getRebate();
                                 }
                             }
                             SaxParserDataStore.phones.remove(product_id);
@@ -274,7 +313,9 @@ public class modifyproduct extends HttpServlet {
                                     discount_amt = entry.getValue().getDiscount();
                                     condition_prod = entry.getValue().getCondition();
                                     price_amt = entry.getValue().getPrice();
-                                    image=entry.getValue().getImage();
+									image=entry.getValue().getImage();
+									quantity = entry.getValue().getQuantity();
+									rebate = entry.getValue().getRebate();
                                 }
                             }
                             SaxParserDataStore.phones.remove(product_id);
@@ -288,7 +329,9 @@ public class modifyproduct extends HttpServlet {
                                     discount_amt = entry.getValue().getDiscount();
                                     condition_prod = entry.getValue().getCondition();
                                     price_amt = entry.getValue().getPrice();
-                                    image=entry.getValue().getImage();
+									image=entry.getValue().getImage();
+									quantity = entry.getValue().getQuantity();
+									rebate = entry.getValue().getRebate();
                                 }
                             }
                             SaxParserDataStore.laptops.remove(product_id);
@@ -301,7 +344,9 @@ public class modifyproduct extends HttpServlet {
                                     discount_amt = entry.getValue().getDiscount();
                                     condition_prod = entry.getValue().getCondition();
                                     price_amt = entry.getValue().getPrice();
-                                    image=entry.getValue().getImage();
+									image=entry.getValue().getImage();
+									quantity = entry.getValue().getQuantity();
+									rebate = entry.getValue().getRebate();
                                 }
                             }
                             SaxParserDataStore.voiceassistants.remove(product_id);
@@ -314,20 +359,22 @@ public class modifyproduct extends HttpServlet {
                                     discount_amt = entry.getValue().getDiscount();
                                     condition_prod = entry.getValue().getCondition();
                                     price_amt = entry.getValue().getPrice();
-                                    image=entry.getValue().getImage();
+									image=entry.getValue().getImage();
+									quantity = entry.getValue().getQuantity();
+									rebate = entry.getValue().getRebate();
                                 }
                             }
                             SaxParserDataStore.wirelessplans.remove(product_id);
 							break;
             }
-            displayModifyproduct(request,response,product_id,product_name,manufacturer_prod,price_amt,display_under,discount_amt,image);
+            displayModifyproduct(request,response,product_id,product_name,manufacturer_prod,price_amt,display_under,discount_amt,image,quantity,rebate);
         }
 		// response.setContentType("text/html");
 		// PrintWriter pw = response.getWriter();
 		// displayAddProduct(request, response);
 	}
 	
-	protected void displayModifyproduct(HttpServletRequest request, HttpServletResponse response, String product_id, String product_name, String manufacturer_prod,Double price_amt, String display_under,Double discount_amt, String image) throws ServletException, IOException {
+	protected void displayModifyproduct(HttpServletRequest request, HttpServletResponse response, String product_id, String product_name, String manufacturer_prod,Double price_amt, String display_under,Double discount_amt, String image, int quantity, String rebate) throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter pw = response.getWriter();
 		Utilities utility = new Utilities(request, pw);
@@ -423,16 +470,15 @@ public class modifyproduct extends HttpServlet {
 			+"<div class='shipping-input-fields'>"
 			+"<select name='display_under' style='width:249px; height:35px' required>" 
 			//  +"<option value=''>-----Select----</option>" 
-			 +"<option value='TV'>TV</option>"
-			 +"<option value='soundsystem'>Sound System</option>"
-			 +"<option value='phone'>Phone</option>"
-			 +"<option value='laptop'>Laptop</option>"
-			 +"<option value='voiceassistant'>Voice Assistant</option>" 
-			 +"<option value='voiceassistant'>Voice Assistant</option>" 
-			 +"<option value='fitnesswatch'>Fitness Watch</option>" 
-			 +"<option value='smartwatch'>Smart Watch</option>" 
-			 +"<option value='headphone'>Head Phone</option>" 
-			 +"<option value='wirelessplan'>Wireless Plan</option>" 
+			 +"<option value='TVs'>TV</option>"
+			 +"<option value='soundsystems'>Sound System</option>"
+			 +"<option value='phones'>Phone</option>"
+			 +"<option value='laptops'>Laptop</option>"
+			 +"<option value='voiceassistants'>Voice Assistant</option>" 
+			 +"<option value='fitnesswatches'>Fitness Watch</option>" 
+			 +"<option value='smartwatches'>Smart Watch</option>" 
+			 +"<option value='headphones'>Head Phone</option>" 
+			 +"<option value='wirelessplans'>Wireless Plan</option>" 
 		   +"</select>" 
 			+"</div>"
 			+"</td>"
@@ -463,6 +509,32 @@ public class modifyproduct extends HttpServlet {
 			+"</td>"
 			+"</tr>"
 		   
+			+"<tr>"
+			+"<td align='right'>"
+			+"<div class='shipping-input-fields'>"
+			+"<label>Quantity:</label>"
+			+"</div>"
+			+"</td>"
+			+"<td>"
+			+"<div class='shipping-input-fields'>"
+			+"<input type='text' name='quantity'  value="+quantity+" class='login-input' style='width:249px; height:24px' />"
+			+"</div>"
+			+"</td>"
+			+"</tr>"
+
+			+"<tr>"
+			+"<td align='right'>"
+			+"<div class='shipping-input-fields'>"
+			+"<label>Rebate:</label>"
+			+"</div>"
+			+"</td>"
+			+"<td>"
+			+"<div class='shipping-input-fields'>"
+			+"<input type='text' name='rebate' value="+rebate+" class='login-input' style='width:249px; height:24px' />"
+			+"</div>"
+			+"</td>"
+			+"</tr>"
+
 			+"<tr>"
 			+"<td colspan='3' align='center'>"
 			+"<div>"

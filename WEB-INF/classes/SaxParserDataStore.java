@@ -395,6 +395,53 @@ https://docs.oracle.com/javase/7/docs/api/org/xml/sax/helpers/DefaultHandler.htm
 			return;
         }
 
+		if(element.equalsIgnoreCase("quantity")){
+			if(currentElement.equals("TV"))
+				TV.setQuantity(Integer.parseInt(elementValueRead));
+        	if(currentElement.equals("soundsystem"))
+				soundsystem.setQuantity(Integer.parseInt(elementValueRead));
+            if(currentElement.equals("phone"))
+				phone.setQuantity(Integer.parseInt(elementValueRead));
+				if(currentElement.equals("laptop"))
+				laptop.setQuantity(Integer.parseInt(elementValueRead));
+				if(currentElement.equals("voiceassistant"))
+				voiceassistant.setQuantity(Integer.parseInt(elementValueRead));
+				if(currentElement.equals("fitnesswatch"))
+				fitnesswatch.setQuantity(Integer.parseInt(elementValueRead));
+				if(currentElement.equals("smartwatch"))
+				smartwatch.setQuantity(Integer.parseInt(elementValueRead));
+				if(currentElement.equals("headphone"))
+				headphone.setQuantity(Integer.parseInt(elementValueRead));
+				if(currentElement.equals("wirelessplan"))
+				wirelessplan.setQuantity(Integer.parseInt(elementValueRead));
+            if(currentElement.equals("accessory"))
+				accessory.setQuantity(Integer.parseInt(elementValueRead));         
+			return;
+		}
+		
+		if (element.equalsIgnoreCase("rebate")) {
+            if(currentElement.equals("TV"))
+				TV.setRebate(elementValueRead);
+        	if(currentElement.equals("soundsystem"))
+				soundsystem.setRebate(elementValueRead);
+            if(currentElement.equals("phone"))
+				phone.setRebate(elementValueRead);
+				if(currentElement.equals("laptop"))
+				laptop.setRebate(elementValueRead);
+				if(currentElement.equals("voiceassistant"))
+				voiceassistant.setRebate(elementValueRead);
+				if(currentElement.equals("fitnesswatch"))
+				fitnesswatch.setRebate(elementValueRead);
+				if(currentElement.equals("smartwatch"))
+				smartwatch.setRebate(elementValueRead);
+				if(currentElement.equals("headphone"))
+				headphone.setRebate(elementValueRead);
+				if(currentElement.equals("wirelessplan"))
+				wirelessplan.setRebate(elementValueRead);
+            if(currentElement.equals("accessory"))
+				accessory.setRebate(elementValueRead);          
+			return;
+	    }
 	}
 	//get each element in xml tag
     @Override
