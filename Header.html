@@ -43,8 +43,8 @@ $('.carousel .item').each(function(){
 
 
 </head>
-<body style='margin: 0px !important; padding: 0 !important;	background: #286090 !important;	font-family: Georgia, "Times New Roman", Times, serif;	font-size: 12px !important;	'>
-	<script type="text/javascript" src="autocomplete.js"></script>
+<body onload="init()" style='margin: 0px !important; padding: 0 !important;	background: #286090 !important;	font-family: Georgia, "Times New Roman", Times, serif;	font-size: 12px !important;	'>
+	<script type="text/javascript" src="javascript.js"></script>
 	<!-- Start #logo top content of the webpage-->
 	<div id="logo">
 		<table style="float: left">
@@ -67,12 +67,12 @@ $('.carousel .item').each(function(){
 			style="float: right; width: 30%; margin-top: 35px; border: 1px solid white; padding: 5px; padding-right: 15px">
 			<b><em style="color: white;">Search Product:</em></b>
 			<div name="autofillform">
-				<input type="text" name="complete-field" value="" class="input"
-					id="complete-field" onkeyup="doCompletion()" autocomplete="off"
-					placeholder="Search Here" style="padding: 5px; font-size: 16px;" />
+				<input type="text" name="searchId" value="" class="input"
+					id="searchId" onkeyup="doCompletion()"
+					placeholder="Search Here" style="padding: 5px; font-size: 16px;"/>
 				<div id="auto-row">
 					<table id="complete-table" class="gridtable"
-						style="position: absolute; width: 315px;"></table>
+						style="position: absolute; width: 315px; background-color: whitesmoke"></table>
 				</div>
 			</div>
 		</div>

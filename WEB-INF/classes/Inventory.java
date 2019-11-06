@@ -36,7 +36,7 @@ public class Inventory extends HttpServlet {
 			utility.printHtml("Header.html");
 			utility.printHtml("LeftNavigationBar.html");
 			pw.print("<div id='content'><div class='post'><h2 class='title meta'>");
-			pw.print("<a style='font-size: 24px;'>Inventory List for all Products</a>");
+			pw.print("<a style='font-size: 24px;'>Products on Sale/Rebate</a>");
 			pw.print("</h2><div class='entry' style='overflow: auto;height: 64em;'>");
 			pw.print("<table class='gridtable' >");
 			pw.print("<tr>");

@@ -86,7 +86,7 @@ hr {
 
 #logo a {
 	text-decoration: none;
-	color: rgb(255, 255, 255);
+	color:#286090;
 
 }
 
@@ -551,7 +551,7 @@ table.gridtable td {
 	padding: 8px;
 	border-style: solid;
 	border-color: #666666;
-	background-color: #ffffff;
+	/* background-color: #000000; */
 }
 /* style for prev annd next button of carousel */
 
