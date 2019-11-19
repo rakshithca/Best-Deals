@@ -6,6 +6,8 @@ accessories realated to product will get displayed in the carousel.*/
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Map;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -15,33 +17,54 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.*;			
+import java.io.*;	
+
 			
 			
 public class Carousel{
 			
 	public String  carouselfeature(Utilities utility){
 				
-						
-		HashMap<String, TV> hm = new HashMap<String, TV>();
+		ProductRecommenderUtility prodRecUtility = new ProductRecommenderUtility();
+		
+		HashMap<String, Console> hm = new HashMap<String, Console>();
 		StringBuilder sb = new StringBuilder();
 		String myCarousel = null;
 			
 		String name = null;
 		String CategoryName = null;
 		if(CategoryName==null){
-			hm.putAll(SaxParserDataStore.TVs);
+			try{
+			// hm=MySqlDataStoreUtilities.getProducts();
+			// hm=MySqlDataStoreUtilities.getAllProducts();
+			// public static ArrayList<String> getAllProducts(){
 			name = "";
+			}catch(Exception e)
+			{
+				
+			}
+			
 		}
+		HashMap<String,String> prodRecmMap = new HashMap<String,String>();
+		prodRecmMap = prodRecUtility.readOutputFile();
+		
+		
+		
 		int l =0;
-		for (OrderItem oi : utility.getCustomerOrders())
+		for(String user: prodRecmMap.keySet())
 		{
-			if (hm.containsKey(oi.getName()))
-			{	
+			if(user.equals(utility.username()))
+			{
+				String products = prodRecmMap.get(user);
+				products=products.replace("[","");
+				products=products.replace("]","");
+				products=products.replace("\"", " ");
+				ArrayList<String> productsList = new ArrayList<String>(Arrays.asList(products.split(",")));
+
 		        myCarousel = "myCarousel"+l;
 					
 				sb.append("<div id='content'><div class='post'><h2 class='title meta'>");
-				sb.append("<a style='font-size: 24px;'>"+oi.getName()+" Accessories</a>");
+				sb.append("<a style='font-size: 24px;'>"+""+" Recommended Products</a>");
 				
 				sb.append("</h2>");
 
@@ -60,14 +83,11 @@ public class Carousel{
 				*/
 				sb.append("<div class='carousel-inner'>");
 						
-				TV TV1 = hm.get(oi.getName());
-				System.out.print(oi.getName());
-				int k = 0; int size= hm.size();
-			
-				for(Map.Entry<String, String> acc:TV1.getAccessories().entrySet())
-				{
-				
-					Accessory accessory= SaxParserDataStore.accessories.get(acc.getValue());
+				int k = 0;
+				for(String prod : productsList){
+					prod= prod.replace("'", "");
+					Product prodObj = new Product();
+					prodObj = ProductRecommenderUtility.getProduct(prod.trim());
 					if (k==0 )
 					{
 						
@@ -78,32 +98,34 @@ public class Carousel{
 						sb.append("<div class='item'><div class='col-md-6' style = 'background-color: #58acfa ;border :1px solid #cfd1d3' >");
 					}
 					sb.append("<div id='shop_item'>");
-					sb.append("<h3>"+accessory.getName()+"</h3>");
-					sb.append("<strong>"+accessory.getPrice()+"$</strong><ul>");
-					sb.append("<li id='item'><img src='images/accessories/"+accessory.getImage()+"' alt='' /></li>");
+					sb.append("<h3>"+prodObj.getName()+"</h3>");
+					sb.append("<strong>"+prodObj.getPrice()+"$</strong><ul>");
+					sb.append("<li id='item'><img src='images/"+prodObj.getType()+"/"+prodObj.getImage()+"' alt='' /></li>");
 					sb.append("<li><form method='post' action='Cart'>" +
-							"<input type='hidden' name='name' value='"+acc.getValue()+"'>"+
-							"<input type='hidden' name='type' value='accessories'>"+
-							"<input type='hidden' name='maker' value='"+CategoryName+"'>"+
-							"<input type='hidden' name='access' value='"+oi.getName()+"'>"+
+							"<input type='hidden' name='name' value='"+prod.trim()+"'>"+
+							"<input type='hidden' name='type' value='"+prodObj.getType()+"'>"+
+							"<input type='hidden' name='maker' value='"+prodObj.getRetailer()+"'>"+
+							"<input type='hidden' name='access' value='"+" "+"'>"+
 							"<input type='submit' class='btnbuy' value='Buy Now'></form></li>");
-					sb.append("<li><form method='post' action='WriteReview'>"+"<input type='hidden' name='name' value='"+acc+"'>"+
-							"<input type='hidden' name='type' value='accessories'>"+
-							"<input type='hidden' name='maker' value='"+CategoryName+"'>"+
-							"<input type='hidden' name='access' value='"+oi.getName()+"'>"+
+					sb.append("<li><form method='post' action='WriteReview'>"+"<input type='hidden' name='name' value='"+prodObj.getName()+"'>"+
+							"<input type='hidden' name='type' value='"+prodObj.getType()+"'>"+
+							"<input type='hidden' name='maker' value='"+prodObj.getRetailer()+"'>"+
+							"<input type='hidden' name='access' value='"+" "+"'>"+
+							"<input type='hidden' name='price' value='"+prodObj.getPrice()+"'>"+
 							"<input type='submit' value='WriteReview' class='btnreview'></form></li>");
-					sb.append("<li><form method='post' action='ViewReview'>"+"<input type='hidden' name='name' value='"+acc+"'>"+
-							"<input type='hidden' name='type' value='accessories'>"+
-							"<input type='hidden' name='maker' value='"+CategoryName+"'>"+
-							"<input type='hidden' name='access' value='"+oi.getName()+"'>"+
+					sb.append("<li><form method='post' action='ViewReview'>"+"<input type='hidden' name='name' value='"+prodObj.getName()+"'>"+
+							"<input type='hidden' name='type' value='"+prodObj.getType()+"'>"+
+							"<input type='hidden' name='maker' value='"+prodObj.getRetailer()+"'>"+
+							"<input type='hidden' name='access' value='"+" "+"'>"+
 							"<input type='submit' value='ViewReview' class='btnreview'></form></li>");
 
 					sb.append("</ul></div></div>");
 					sb.append("</div>");
 				
 					k++;
-			
+					
 				}
+				
 			
 				sb.append("</div>");
 				/*		The "Left and right controls" part:
@@ -132,4 +154,3 @@ public class Carousel{
 			return sb.toString();
 		}
 	}
-	

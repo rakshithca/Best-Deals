@@ -28,7 +28,7 @@ public class DealMatchesUtilities extends HttpServlet {
 		pw.print("<div class='entry'>");
 		pw.print("<img src='images/site/TVs.png' style='width: 600px; display: block; margin-left: auto; margin-right: auto' />");
 		pw.print("<br> <br>");
-		pw.print("<h2  style='padding: 120px'> Always deliver more than expected</h2>");
+		pw.print("<h2  style='padding: 100px'> Always deliver more than expected</h2>");
 		pw.print("<br> <br>");
 		// pw.print("<h1>We beat our competitors in all aspects. Price-Match Guaranteed</h2>");
 		
